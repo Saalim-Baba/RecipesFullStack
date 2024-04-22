@@ -1,0 +1,368 @@
+{
+  "Italian": [
+    {
+      "name": "Spaghetti Carbonara",
+      "ingredients": ["spaghetti", "eggs", "bacon", "Parmesan cheese", "black pepper"],
+      "instructions": "Cook spaghetti according to package instructions. Meanwhile, cook bacon until crispy. In a bowl, whisk eggs, Parmesan cheese, and black pepper. Drain spaghetti and add to the bacon pan. Remove from heat and quickly stir in the egg mixture. Serve immediately."
+    },
+    {
+      "name": "Caprese Salad",
+      "ingredients": ["tomatoes", "fresh mozzarella cheese", "fresh basil leaves", "balsamic vinegar", "olive oil", "salt", "black pepper"],
+      "instructions": "Slice tomatoes and mozzarella cheese. Arrange on a plate with fresh basil leaves. Drizzle with balsamic vinegar and olive oil. Season with salt and pepper to taste."
+    },
+    {
+      "name": "Classic Margherita Pizza",
+      "ingredients": ["pizza dough", "tomato sauce", "fresh mozzarella cheese", "fresh basil leaves", "olive oil", "salt", "black pepper"],
+      "instructions": "Roll out pizza dough into a circle. Spread tomato sauce evenly over the dough. Tear fresh mozzarella cheese into pieces and distribute over the sauce. Top with fresh basil leaves. Drizzle with olive oil and season with salt and pepper. Bake in a preheated oven until crust is golden and cheese is bubbly."
+    },
+    {
+      "name": "Pesto Pasta",
+      "ingredients": ["pasta", "basil leaves", "pine nuts", "garlic", "Parmesan cheese", "olive oil", "salt", "black pepper"],
+      "instructions": "Cook pasta according to package instructions. Meanwhile, blend basil leaves, pine nuts, garlic, Parmesan cheese, olive oil, salt, and pepper in a food processor until smooth. Toss pesto with cooked pasta and serve hot."
+    },
+    {
+      "name": "Bruschetta",
+      "ingredients": ["baguette", "tomatoes", "garlic", "fresh basil leaves", "balsamic vinegar", "olive oil", "salt", "black pepper"],
+      "instructions": "Slice baguette and toast until lightly golden. Rub each slice with garlic. Dice tomatoes and mix with chopped basil, balsamic vinegar, olive oil, salt, and pepper. Spoon the tomato mixture onto the toasted baguette slices. Serve immediately."
+    },
+    {
+      "name": "Tiramisu",
+      "ingredients": ["ladyfinger cookies", "espresso coffee", "mascarpone cheese", "whipping cream", "cocoa powder", "sugar", "rum or Marsala wine"],
+      "instructions": "Dip ladyfinger cookies in espresso coffee and layer them in a dish. In a bowl, mix mascarpone cheese, whipping cream, sugar, and rum or Marsala wine until smooth. Spread half of the mixture over the ladyfingers. Repeat the layers. Dust the top with cocoa powder. Chill in the refrigerator for at least 4 hours before serving."
+    },
+    {
+      "name": "Minestrone Soup",
+      "ingredients": ["vegetable broth", "cannellini beans", "carrots", "celery", "zucchini", "tomatoes", "onion", "pasta", "spinach", "Parmesan cheese"],
+      "instructions": "In a large pot, sauté onion, carrots, and celery until softened. Add vegetable broth, diced tomatoes, cannellini beans, zucchini, and pasta. Simmer until vegetables are tender. Stir in spinach and cook until wilted. Serve hot with grated Parmesan cheese."
+    },
+    {
+      "name": "Risotto",
+      "ingredients": ["Arborio rice", "chicken or vegetable broth", "white wine", "onion", "Parmesan cheese", "butter", "olive oil", "salt", "black pepper"],
+      "instructions": "In a saucepan, heat chicken or vegetable broth and keep warm. In a separate pan, sauté onion in olive oil and butter until translucent. Add Arborio rice and cook for a few minutes. Deglaze with white wine and cook until absorbed. Gradually add warm broth, stirring frequently, until rice is creamy and tender. Stir in grated Parmesan cheese, salt, and pepper. Serve hot."
+    },
+    {
+      "name": "Lasagna",
+      "ingredients": ["lasagna noodles", "ground beef", "Italian sausage", "tomato sauce", "ricotta cheese", "mozzarella cheese", "Parmesan cheese", "egg", "garlic", "onion"],
+      "instructions": "Cook lasagna noodles according to package instructions. In a skillet, brown ground beef and Italian sausage with garlic and onion. Mix in tomato sauce. In a bowl, combine ricotta cheese, egg, and grated Parmesan cheese. Layer lasagna noodles, meat sauce, ricotta mixture, and mozzarella cheese in a baking dish. Repeat layers and top with mozzarella and Parmesan cheese. Bake in a preheated oven until bubbly and golden."
+    },
+    {
+      "name": "Gelato",
+      "ingredients": ["whole milk", "heavy cream", "sugar", "egg yolks", "flavorings (vanilla, chocolate, fruit puree, etc.)"],
+      "instructions": "In a saucepan, heat whole milk and heavy cream until almost boiling. In a bowl, whisk egg yolks and sugar until pale and creamy. Slowly pour the hot milk mixture into the egg yolks, whisking constantly. Return the mixture to the saucepan and cook over low heat until slightly thickened. Remove from heat and stir in desired flavorings. Chill in the refrigerator for several hours or overnight. Churn in an ice cream maker according to manufacturer's instructions."
+    }
+  ],
+  "Indian": [
+    {
+      "name": "Chicken Tikka Masala",
+      "ingredients": ["chicken thighs", "yogurt", "tomato sauce", "ginger", "garlic", "garam masala", "cumin", "coriander", "paprika", "heavy cream"],
+      "instructions": "Marinate chicken thighs in yogurt, ginger, garlic, and spices for at least 1 hour. Grill or bake chicken until cooked through. In a separate pan, simmer tomato sauce with spices and cream. Add cooked chicken to the sauce and simmer until heated through. Serve with rice or naan bread."
+    },
+    {
+      "name": "Palak Paneer",
+      "ingredients": ["paneer cheese", "spinach", "onion", "tomato", "ginger", "garlic", "garam masala", "cumin", "coriander", "turmeric"],
+      "instructions": "Sauté onion, ginger, and garlic until golden brown. Add chopped tomatoes and cook until soft. Stir in spinach and cook until wilted. Blend the mixture until smooth. Return to the pan and add spices and cubed paneer cheese. Simmer until heated through. Serve hot with rice or naan bread."
+    },
+    {
+      "name": "Vegetable Biryani",
+      "ingredients": ["basmati rice", "mixed vegetables (potatoes, carrots, peas)", "onion", "ginger-garlic paste", "yogurt", "spices (cumin, coriander, garam masala, turmeric)", "saffron", "cashews", "raisins"],
+      "instructions": "Soak basmati rice in water for 30 minutes. Sauté onion in ghee until golden brown. Add ginger-garlic paste and spices, cook until fragrant. Add mixed vegetables and cook until slightly tender. Layer rice and vegetable mixture in a pot. Sprinkle saffron, cashews, and raisins between the layers. Cover and cook until rice is fluffy and cooked through."
+    },
+    {
+      "name": "Chana Masala",
+      "ingredients": ["chickpeas", "onion", "tomatoes", "ginger", "garlic", "green chili", "garam masala", "cumin", "coriander", "turmeric"],
+      "instructions": "Sauté onion, ginger, garlic, and green chili until soft. Add chopped tomatoes and cook until they break down. Stir in spices and cook until fragrant. Add cooked chickpeas and simmer until heated through. Serve hot with rice or naan bread."
+    },
+    {
+      "name": "Dal Tadka",
+      "ingredients": ["yellow lentils (dal)", "onion", "tomato", "ginger", "garlic", "green chili", "turmeric", "cumin", "mustard seeds", "curry leaves"],
+      "instructions": "Boil yellow lentils until soft. In a separate pan, sauté onion, ginger, garlic, and green chili until golden brown. Add chopped tomatoes and cook until soft. Add cooked lentils, turmeric, and salt. In another small pan, heat ghee and add mustard seeds and curry leaves. Pour over the lentil mixture. Serve hot with rice or roti."
+    },
+    {
+      "name": "Chicken Curry",
+      "ingredients": ["chicken thighs", "onion", "tomatoes", "ginger", "garlic", "green chili", "curry powder", "garam masala", "cumin", "coriander"],
+      "instructions": "Sauté onion, ginger, garlic, and green chili until soft. Add chopped tomatoes and cook until they break down. Stir in curry powder and spices. Add chicken thighs and cook until browned. Add water and simmer until chicken is cooked through and sauce is thickened. Serve hot with rice or naan bread."
+    },
+    {
+      "name": "Vegetable Samosas",
+      "ingredients": ["potatoes", "peas", "carrots", "onion", "ginger", "garlic", "turmeric", "cumin seeds", "coriander seeds", "garam masala", "phyllo pastry"],
+      "instructions": "Boil potatoes until tender. In a pan, sauté onion, ginger, garlic, and spices until fragrant. Add chopped vegetables and cook until soft. Mash the mixture slightly. Cut phyllo pastry sheets into squares. Place a spoonful of the vegetable mixture in the center of each square. Fold into triangles and seal the edges. Deep fry until golden brown. Serve hot with chutney."
+    },
+    {
+      "name": "Naan Bread",
+      "ingredients": ["all-purpose flour", "yeast", "sugar", "salt", "yogurt", "milk", "butter", "garlic", "cilantro"],
+      "instructions": "In a bowl, mix yeast, sugar, and warm water. Let it sit until frothy. In another bowl, mix flour, salt, yogurt, and milk. Add the yeast mixture and knead until smooth. Cover and let it rise until doubled in size. Divide the dough into balls. Roll out each ball into a circle. Cook in a hot skillet until puffed and lightly browned. Brush with melted butter and garlic. Sprinkle with chopped cilantro."
+    },
+    {
+      "name": "Paneer Tikka",
+      "ingredients": ["paneer cheese", "bell peppers", "onion", "yogurt", "ginger-garlic paste", "garam masala", "cumin", "coriander", "turmeric", "chaat masala"],
+      "instructions": "Cut paneer cheese, bell peppers, and onion into cubes. Marinate in yogurt, ginger-garlic paste, and spices for at least 1 hour. Thread onto skewers and grill or bake until lightly charred. Sprinkle with chaat masala and serve hot with mint chutney."
+    },
+    {
+      "name": "Rasgulla",
+      "ingredients": ["milk", "lemon juice", "sugar", "water", "rose water", "cardamom pods"],
+      "instructions": "Bring milk to a boil and add lemon juice to curdle. Strain through a cheesecloth and rinse with water to remove the sour taste. Knead the paneer until smooth. Divide into small balls. In a pot, mix sugar, water, rose water, and cardamom pods. Bring to a boil and add the paneer balls. Cook until they double in size. Chill and serve cold."
+    }
+  ],
+  "Chinese": [
+    {
+      "name": "Kung Pao Chicken",
+      "ingredients": ["chicken breast", "bell peppers", "onion", "garlic", "ginger", "green onions", "chili peppers", "soy sauce", "hoisin sauce", "rice vinegar", "sesame oil", "cornstarch", "peanuts"],
+      "instructions": "Cut chicken breast into cubes. Marinate in soy sauce, rice vinegar, and cornstarch. Sauté garlic, ginger, and chili peppers until fragrant. Add chicken and cook until browned. Add bell peppers, onion, and peanuts. Stir in hoisin sauce and sesame oil. Cook until vegetables are tender. Serve hot with rice."
+    },
+    {
+      "name": "Egg Fried Rice",
+      "ingredients": ["cooked rice", "eggs", "carrots", "peas", "green onions", "garlic", "soy sauce", "sesame oil"],
+      "instructions": "Heat oil in a pan and scramble eggs. Remove from the pan and set aside. Sauté garlic and green onions until fragrant. Add carrots and peas, cook until tender. Stir in cooked rice and eggs. Drizzle with soy sauce and sesame oil. Cook until heated through. Serve hot."
+    },
+    {
+      "name": "Mapo Tofu",
+      "ingredients": ["tofu", "ground pork", "garlic", "ginger", "green onions", "chili bean paste", "soy sauce", "rice wine", "sesame oil", "cornstarch", "Sichuan peppercorns"],
+      "instructions": "Sauté garlic, ginger, and green onions until fragrant. Add ground pork and cook until browned. Stir in chili bean paste and Sichuan peppercorns. Add diced tofu and gently stir to combine. Mix cornstarch with water and pour into the pan. Cook until sauce thickens. Drizzle with soy sauce, rice wine, and sesame oil. Serve hot with rice."
+    },
+    {
+      "name": "Sweet and Sour Pork",
+      "ingredients": ["pork loin", "bell peppers", "pineapple chunks", "onion", "garlic", "ginger", "cornstarch", "soy sauce", "rice vinegar", "ketchup", "brown sugar"],
+      "instructions": "Cut pork loin into bite-sized pieces. Coat with cornstarch and fry until golden brown. Sauté garlic, ginger, bell peppers, onion, and pineapple chunks until tender. Mix soy sauce, rice vinegar, ketchup, and brown sugar. Pour over the pork and vegetables. Cook until sauce thickens. Serve hot with rice."
+    },
+    {
+      "name": "Spring Rolls",
+      "ingredients": ["spring roll wrappers", "shredded cabbage", "carrots", "bean sprouts", "ground pork", "shrimp", "garlic", "ginger", "soy sauce", "sesame oil", "cornstarch"],
+      "instructions": "Sauté garlic and ginger until fragrant. Add ground pork and shrimp, cook until browned. Add shredded cabbage, carrots, and bean sprouts, cook until tender. Mix soy sauce, sesame oil, and cornstarch, and pour into the pan. Cook until sauce thickens. Spoon filling onto spring roll wrappers, roll tightly, and seal edges with water. Deep fry until golden brown. Serve hot with dipping sauce."
+    },
+    {
+      "name": "General Tso's Chicken",
+      "ingredients": ["chicken thighs", "cornstarch", "soy sauce", "rice vinegar", "hoisin sauce", "garlic", "ginger", "green onions", "dried red chilies", "sesame oil"],
+      "instructions": "Cut chicken thighs into bite-sized pieces. Coat with cornstarch and fry until crispy. Sauté garlic, ginger, and dried red chilies until fragrant. Add chicken and stir in soy sauce, rice vinegar, and hoisin sauce. Cook until sauce thickens. Garnish with green onions and drizzle with sesame oil. Serve hot with rice."
+    },
+    {
+      "name": "Dim Sum Dumplings",
+      "ingredients": ["wonton wrappers", "ground pork", "shrimp", "green onions", "ginger", "soy sauce", "sesame oil", "rice wine", "cornstarch"],
+      "instructions": "Mix ground pork, chopped shrimp, green onions, ginger, soy sauce, sesame oil, rice wine, and cornstarch in a bowl. Spoon filling onto wonton wrappers. Moisten edges with water and fold into dumplings. Steam until cooked through. Serve hot with dipping sauce."
+    },
+    {
+      "name": "Chow Mein",
+      "ingredients": ["egg noodles", "bell peppers", "carrots", "celery", "onion", "garlic", "ginger", "soy sauce", "oyster sauce", "sesame oil"],
+      "instructions": "Cook egg noodles according to package instructions. Sauté garlic, ginger, and vegetables until tender. Stir in cooked noodles, soy sauce, oyster sauce, and sesame oil. Cook until heated through. Serve hot."
+    },
+    {
+      "name": "Beef and Broccoli Stir-Fry",
+      "ingredients": ["beef sirloin", "broccoli", "soy sauce", "brown sugar", "garlic", "ginger", "cornstarch", "rice"],
+      "instructions": "Slice beef thinly and marinate in soy sauce, brown sugar, garlic, and ginger. Stir-fry beef in a hot skillet until browned. Add broccoli florets and continue to cook until tender. In a small bowl, mix cornstarch with a little water and pour over the beef and broccoli. Cook until sauce thickens. Serve over cooked rice."
+    },
+    {
+      "name": "Hot and Sour Soup",
+      "ingredients": ["chicken broth", "tofu", "bamboo shoots", "wood ear mushrooms", "eggs", "soy sauce", "rice vinegar", "white pepper", "sesame oil", "cornstarch"],
+      "instructions": "Bring chicken broth to a boil and add tofu, bamboo shoots, and wood ear mushrooms. Mix cornstarch with water and pour into the soup. Beat eggs and slowly pour into the soup, stirring gently. Season with soy sauce, rice vinegar, white pepper, and sesame oil. Serve hot."
+    }
+  ],
+  "Mexican": [
+    {
+      "name": "Beef Tacos",
+      "ingredients": ["ground beef", "taco seasoning", "tortillas", "lettuce", "tomatoes", "cheddar cheese", "sour cream", "avocado", "lime", "cilantro"],
+      "instructions": "Cook ground beef in a skillet until browned. Add taco seasoning and a little water, simmer until thickened. Warm tortillas in a dry skillet. Assemble tacos with beef, lettuce, tomatoes, cheese, sour cream, avocado slices, and a squeeze of lime. Garnish with cilantro."
+    },
+    {
+      "name": "Chicken Enchiladas",
+      "ingredients": ["cooked chicken", "tortillas", "enchilada sauce", "cheddar cheese", "green onions", "black olives", "sour cream", "avocado", "cilantro"],
+      "instructions": "Shred cooked chicken and mix with a little enchilada sauce. Spoon the chicken mixture onto tortillas and roll up. Place seam-side down in a baking dish. Pour enchilada sauce over the top and sprinkle with cheddar cheese. Bake in a preheated oven until cheese is melted and bubbly. Serve hot with sliced green onions, black olives, sour cream, avocado slices, and cilantro."
+    },
+    {
+      "name": "Guacamole",
+      "ingredients": ["avocado", "tomato", "onion", "jalapeno", "lime", "cilantro", "salt"],
+      "instructions": "Mash avocados in a bowl. Stir in diced tomatoes, onion, jalapeno, lime juice, chopped cilantro, and salt. Mix until well combined. Serve with tortilla chips."
+    },
+    {
+      "name": "Quesadillas",
+      "ingredients": ["tortillas", "shredded chicken", "cheddar cheese", "black beans", "corn", "salsa", "sour cream", "guacamole"],
+      "instructions": "Place tortillas on a flat surface. Sprinkle shredded chicken, cheddar cheese, black beans, and corn on one half of each tortilla. Fold the tortillas in half. Heat a skillet over medium heat and cook the quesadillas until golden brown and crispy on both sides. Serve hot with salsa, sour cream, and guacamole."
+    },
+    {
+      "name": "Mexican Rice",
+      "ingredients": ["rice", "tomato sauce", "chicken broth", "onion", "garlic", "jalapeno", "cilantro", "lime", "cumin", "coriander"],
+      "instructions": "Sauté onion, garlic, and jalapeno until softened. Stir in rice and cook until lightly toasted. Add tomato sauce, chicken broth, cumin, coriander, and salt. Bring to a boil, then reduce heat and simmer until rice is cooked through. Fluff with a fork and stir in chopped cilantro and lime juice. Serve hot."
+    },
+    {
+      "name": "Chile Rellenos",
+      "ingredients": ["poblano peppers", "Monterey Jack cheese", "eggs", "flour", "tomato sauce", "onion", "garlic", "cilantro", "lime"],
+      "instructions": "Roast poblano peppers until charred. Peel off the skin and make a slit lengthwise. Stuff each pepper with Monterey Jack cheese. Separate eggs and beat egg whites until stiff peaks form. Gently fold in egg yolks. Dredge stuffed peppers in flour and dip in egg mixture. Fry in hot oil until golden brown. Serve hot with tomato sauce, chopped onion, garlic, cilantro, and lime wedges."
+    },
+    {
+      "name": "Pico de Gallo",
+      "ingredients": ["tomatoes", "onion", "jalapeno", "cilantro", "lime", "salt"],
+      "instructions": "Dice tomatoes, onion, and jalapeno. Chop cilantro. Mix together in a bowl and squeeze lime juice over the top. Season with salt to taste. Serve as a dip or topping for tacos, nachos, or grilled meats."
+    },
+    {
+      "name": "Fajitas",
+      "ingredients": ["chicken breasts", "bell peppers", "onion", "lime", "garlic", "chili powder", "cumin", "paprika", "tortillas", "sour cream", "guacamole"],
+      "instructions": "Slice chicken breasts, bell peppers, and onion into strips. Marinate in lime juice, minced garlic, chili powder, cumin, and paprika for at least 30 minutes. Sauté chicken and vegetables in a hot skillet until cooked through and slightly charred. Serve hot with warm tortillas, sour cream, and guacamole."
+    },
+    {
+      "name": "Tamales",
+      "ingredients": ["corn husks", "masa harina", "lard", "chicken or pork", "red chili sauce", "olives", "raisins", "onion", "garlic", "cumin"],
+      "instructions": "Soak corn husks in warm water until pliable. Mix masa harina with water and lard until dough forms. Spread masa mixture onto corn husks. Spoon a filling of chicken or pork mixed with red chili sauce, olives, raisins, onion, garlic, and cumin down the center. Roll up the corn husks and tie with kitchen twine. Steam until cooked through. Serve hot."
+    },
+    {
+      "name": "Churros",
+      "ingredients": ["water", "butter", "flour", "eggs", "sugar", "cinnamon", "chocolate sauce"],
+      "instructions": "Bring water and butter to a boil. Stir in flour until a smooth dough forms. Remove from heat and let cool slightly. Beat in eggs until combined. Transfer dough to a piping bag fitted with a star tip. Pipe dough into hot oil and fry until golden brown and crispy. Drain on paper towels, then roll in a mixture of sugar and cinnamon. Serve hot with chocolate sauce for dipping."
+    }
+  ],
+  "American": [
+    {
+      "name": "Classic Cheeseburger",
+      "ingredients": ["ground beef", "hamburger buns", "cheddar cheese", "lettuce", "tomato", "onion", "pickles", "ketchup", "mustard", "mayonnaise"],
+      "instructions": "Form ground beef into patties and season with salt and pepper. Grill or fry until cooked to desired doneness. Toast hamburger buns on the grill or in a pan. Assemble burgers with cheese, lettuce, tomato, onion, pickles, ketchup, mustard, and mayonnaise."
+    },
+    {
+      "name": "Macaroni and Cheese",
+      "ingredients": ["macaroni pasta", "cheddar cheese", "butter", "flour", "milk", "bread crumbs", "salt", "black pepper"],
+      "instructions": "Cook macaroni pasta according to package instructions. In a saucepan, melt butter and whisk in flour to make a roux. Gradually whisk in milk until smooth and thickened. Stir in shredded cheddar cheese until melted. Season with salt and pepper. Mix cheese sauce with cooked macaroni. Transfer to a baking dish, sprinkle with bread crumbs, and bake until golden and bubbly."
+    },
+    {
+      "name": "Fried Chicken",
+      "ingredients": ["chicken pieces", "buttermilk", "flour", "salt", "pepper", "paprika", "garlic powder", "onion powder", "vegetable oil"],
+      "instructions": "Soak chicken pieces in buttermilk for at least 1 hour. In a bowl, mix flour with salt, pepper, paprika, garlic powder, and onion powder. Dredge chicken in flour mixture, shaking off excess. Heat vegetable oil in a deep skillet or fryer. Fry chicken pieces until golden brown and cooked through. Drain on paper towels before serving."
+    },
+    {
+      "name": "BBQ Ribs",
+      "ingredients": ["pork ribs", "barbecue sauce", "brown sugar", "paprika", "garlic powder", "onion powder", "salt", "black pepper"],
+      "instructions": "Rub pork ribs with a mixture of brown sugar, paprika, garlic powder, onion powder, salt, and black pepper. Wrap ribs in foil and bake in a preheated oven until tender. Unwrap ribs and brush with barbecue sauce. Grill over medium heat until sauce is caramelized and ribs are heated through."
+    },
+    {
+      "name": "Chicken Pot Pie",
+      "ingredients": ["cooked chicken", "frozen mixed vegetables", "onion", "butter", "flour", "chicken broth", "milk", "pie crust", "salt", "black pepper"],
+      "instructions": "Sauté onion in butter until soft. Stir in flour and cook until golden. Gradually whisk in chicken broth and milk until smooth and thickened. Add cooked chicken and frozen mixed vegetables. Season with salt and pepper. Pour mixture into a pie dish and cover with pie crust. Bake in a preheated oven until crust is golden brown and filling is bubbly."
+    },
+    {
+      "name": "Buffalo Wings",
+      "ingredients": ["chicken wings", "hot sauce", "butter", "celery sticks", "blue cheese dressing"],
+      "instructions": "Fry chicken wings until crispy. In a saucepan, melt butter and stir in hot sauce. Toss fried wings in the sauce until coated. Serve hot with celery sticks and blue cheese dressing for dipping."
+    },
+    {
+      "name": "New York Cheesecake",
+      "ingredients": ["cream cheese", "sugar", "eggs", "sour cream", "vanilla extract", "lemon zest", "graham cracker crumbs", "butter"],
+      "instructions": "Mix cream cheese with sugar until smooth. Beat in eggs, one at a time. Stir in sour cream, vanilla extract, and lemon zest. Press graham cracker crumbs mixed with melted butter into the bottom of a springform pan. Pour the cream cheese mixture over the crust. Bake in a preheated oven until set. Chill in the refrigerator before serving."
+    },
+    {
+      "name": "Apple Pie",
+      "ingredients": ["apples", "sugar", "flour", "cinnamon", "nutmeg", "butter", "pie crust"],
+      "instructions": "Peel and slice apples. Mix with sugar, flour, cinnamon, and nutmeg. Line a pie dish with pie crust and fill with the apple mixture. Dot with butter and cover with another layer of pie crust. Crimp edges to seal. Cut slits in the top crust to vent. Bake in a preheated oven until golden and bubbly."
+    },
+    {
+      "name": "Caesar Salad",
+      "ingredients": ["romaine lettuce", "Caesar dressing", "croutons", "Parmesan cheese", "lemon", "olive oil", "garlic", "Dijon mustard", "anchovy fillets"],
+      "instructions": "Whisk together olive oil, lemon juice, garlic, Dijon mustard, and mashed anchovy fillets to make the dressing. Toss romaine lettuce with Caesar dressing until coated. Top with croutons and shaved Parmesan cheese. Serve immediately."
+    },
+    {
+      "name": "Pancakes",
+      "ingredients": ["flour", "sugar", "baking powder", "salt", "milk", "eggs", "butter", "maple syrup"],
+      "instructions": "Mix flour, sugar, baking powder, and salt in a bowl. In another bowl, whisk together milk, eggs, and melted butter. Stir wet ingredients into dry ingredients until just combined. Heat a griddle over medium heat and grease with butter. Pour batter onto the griddle and cook until bubbles form on the surface. Flip and cook until golden brown. Serve hot with maple syrup."
+    }
+  ],
+  "German": [
+    {
+      "name": "Bratwurst with Sauerkraut",
+      "ingredients": ["bratwurst sausages", "sauerkraut", "onion", "beer", "caraway seeds", "mustard", "rye bread"],
+      "instructions": "Grill or pan-fry bratwurst sausages until browned and cooked through. In a separate pan, sauté sliced onion until caramelized. Add sauerkraut, caraway seeds, and beer. Simmer until heated through. Serve bratwurst with sauerkraut, mustard, and rye bread."
+    },
+    {
+      "name": "Wiener Schnitzel",
+      "ingredients": ["veal cutlets", "flour", "eggs", "breadcrumbs", "lemon", "butter", "parsley", "potatoes", "green beans"],
+      "instructions": "Pound veal cutlets until thin. Dredge in flour, dip in beaten eggs, and coat with breadcrumbs. Fry in hot butter until golden brown and crispy. Serve with lemon wedges, parsley, boiled potatoes, and steamed green beans."
+    },
+    {
+      "name": "Kartoffelsalat (German Potato Salad)",
+      "ingredients": ["potatoes", "bacon", "onion", "vinegar", "sugar", "mustard", "vegetable broth", "salt", "black pepper"],
+      "instructions": "Boil potatoes until tender. Meanwhile, fry bacon until crispy and sauté sliced onion until translucent. Slice potatoes and mix with bacon and onion. In a separate bowl, whisk together vinegar, sugar, mustard, and vegetable broth. Pour over the potato mixture and toss to combine. Season with salt and pepper. Serve warm or at room temperature."
+    },
+    {
+      "name": "Sauerbraten",
+      "ingredients": ["beef roast", "red wine vinegar", "onion", "carrot", "celery", "bay leaves", "cloves", "juniper berries", "brown sugar", "gingersnap cookies", "potato dumplings", "red cabbage"],
+      "instructions": "Marinate beef roast in a mixture of red wine vinegar, sliced onion, carrot, celery, bay leaves, cloves, juniper berries, and brown sugar for several days. Remove beef from the marinade and brown in a hot pan. Strain the marinade and pour over the beef. Add water if needed to cover. Simmer until beef is tender. Crush gingersnap cookies and add to the sauce to thicken. Serve with potato dumplings and red cabbage."
+    },
+    {
+      "name": "Apfelstrudel (Apple Strudel)",
+      "ingredients": ["apples", "sugar", "lemon zest", "cinnamon", "raisins", "bread crumbs", "butter", "phyllo pastry", "powdered sugar"],
+      "instructions": "Peel, core, and slice apples. Mix with sugar, lemon zest, cinnamon, and raisins. Sauté breadcrumbs in butter until golden. Lay out phyllo pastry sheets and brush with melted butter. Sprinkle breadcrumbs over the pastry, then layer with the apple mixture. Roll up the pastry and brush with more butter. Bake until golden brown and crispy. Dust with powdered sugar before serving."
+    },
+    {
+      "name": "Kartoffelsuppe (German Potato Soup)",
+      "ingredients": ["potatoes", "onion", "carrot", "celery", "leek", "bacon", "vegetable broth", "bay leaf", "thyme", "salt", "black pepper", "sour cream", "chives"],
+      "instructions": "Dice potatoes, onion, carrot, celery, and leek. Cut bacon into small pieces. Sauté bacon until crispy, then remove from the pan. In the same pan, sauté onion, carrot, celery, and leek until softened. Add diced potatoes, vegetable broth, bay leaf, and thyme. Simmer until potatoes are tender. Remove bay leaf and purée soup until smooth. Season with salt and pepper. Serve hot with a dollop of sour cream and chopped chives."
+    },
+    {
+      "name": "Rouladen",
+      "ingredients": ["beef slices", "mustard", "bacon", "onion", "pickle spears", "beef broth", "flour", "butter", "sour cream", "potatoes", "red cabbage"],
+      "instructions": "Spread mustard on beef slices and top with a slice of bacon, sliced onion, and a pickle spear. Roll up the beef slices and secure with toothpicks. Brown the rouladen in butter in a hot pan. Add beef broth and simmer until beef is tender. Remove rouladen from the pan. Mix flour with sour cream and stir into the sauce to thicken. Serve rouladen with boiled potatoes and red cabbage."
+    },
+    {
+      "name": "Brezen (German Pretzels)",
+      "ingredients": ["flour", "water", "yeast", "sugar", "salt", "butter", "baking soda", "pretzel salt"],
+      "instructions": "Mix flour, water, yeast, sugar, salt, and melted butter to form a dough. Knead until smooth. Let the dough rise until doubled in size. Divide into pieces and shape into pretzels. Boil pretzels in water mixed with baking soda, then place on a baking sheet. Sprinkle with pretzel salt and bake until golden brown and crispy. Serve warm."
+    },
+    {
+      "name": "Käsespätzle (Cheese Spaetzle)",
+      "ingredients": ["spätzle noodles", "Emmental cheese", "onion", "butter", "sour cream", "salt", "black pepper", "parsley"],
+      "instructions": "Cook spätzle noodles according to package instructions. Sauté sliced onion in butter until caramelized. Mix spätzle with grated Emmental cheese, caramelized onion, and sour cream. Season with salt and pepper. Serve hot, garnished with chopped parsley."
+    },
+    {
+      "name": "Lebkuchen (German Gingerbread Cookies)",
+      "ingredients": ["flour", "honey", "sugar", "eggs", "butter", "lemon zest", "cinnamon", "ginger", "cloves", "nutmeg", "almonds", "powdered sugar"],
+      "instructions": "Mix flour, honey, sugar, eggs, melted butter, lemon zest, and spices to form a dough. Fold in chopped almonds. Roll out the dough and cut into shapes. Bake until golden brown. Allow to cool, then decorate with powdered sugar icing."
+    }
+  ],
+  "Swiss": [
+    {
+      "name": "Rösti",
+      "ingredients": ["potatoes", "butter", "salt", "black pepper", "onion", "bacon", "Emmental cheese", "sour cream"],
+      "instructions": "Grate potatoes and squeeze out excess moisture. Season with salt and pepper. Heat butter in a pan and spread the grated potatoes evenly. Cook until golden brown and crispy on the bottom. Flip and cook the other side. Add sliced onion, bacon, and grated Emmental cheese on top. Cover and cook until cheese is melted. Serve hot with sour cream."
+    },
+    {
+      "name": "Fondue",
+      "ingredients": ["Gruyère cheese", "Emmental cheese", "white wine", "Kirsch", "garlic", "cornstarch", "nutmeg", "baguette", "pearl onions", "gherkins"],
+      "instructions": "Grate Gruyère and Emmental cheese. Rub the inside of a fondue pot with garlic. Heat white wine in the fondue pot and gradually add the grated cheese, stirring until melted. Dissolve cornstarch in Kirsch and add to the cheese mixture. Season with nutmeg. Serve with cubed baguette, pearl onions, and gherkins for dipping."
+    },
+    {
+      "name": "Zürcher Geschnetzeltes",
+      "ingredients": ["veal slices", "mushrooms", "cream", "white wine", "onion", "butter", "flour", "vegetable broth", "lemon juice", "parsley", "Rösti"],
+      "instructions": "Slice veal thinly. Sauté veal and sliced mushrooms in butter until browned. Remove from the pan and set aside. Sauté finely chopped onion in the same pan until translucent. Stir in flour and cook until golden. Deglaze with white wine and vegetable broth. Add cream and simmer until thickened. Return veal and mushrooms to the pan. Season with lemon juice and chopped parsley. Serve hot with Rösti."
+    },
+    {
+      "name": "Bircher Muesli",
+      "ingredients": ["rolled oats", "apple", "yogurt", "milk", "honey", "lemon juice", "nuts", "dried fruit"],
+      "instructions": "Grate apple and mix with rolled oats, yogurt, milk, honey, and lemon juice. Let it sit in the refrigerator overnight. Before serving, stir in chopped nuts and dried fruit. Serve cold."
+    },
+    {
+      "name": "Raclette",
+      "ingredients": ["Raclette cheese", "potatoes", "pickles", "pearl onions", "gherkins", "charcuterie", "baguette"],
+      "instructions": "Slice Raclette cheese thinly. Boil potatoes until tender. Arrange the cheese, potatoes, pickles, pearl onions, gherkins, and charcuterie on a platter. Place the Raclette cheese slices on individual trays and melt under a Raclette grill. Serve melted cheese over potatoes and accompany with pickles, pearl onions, gherkins, charcuterie, and slices of baguette."
+    },
+    {
+      "name": "Bündner Nusstorte (Graubünden Nut Cake)",
+      "ingredients": ["flour", "sugar", "butter", "eggs", "honey", "cream", "walnuts", "raisins", "cinnamon"],
+      "instructions": "Mix flour, sugar, butter, eggs, and honey to form a dough. Press into a tart pan. Spread a layer of cream over the dough. Mix chopped walnuts, raisins, and cinnamon and spread over the cream layer. Bake until golden brown. Allow to cool before slicing."
+    },
+    {
+      "name": "Swiss Chocolate Fondue",
+      "ingredients": ["dark chocolate", "cream", "Kirsch", "marshmallows", "strawberries", "banana", "pineapple", "pretzels"],
+      "instructions": "Melt dark chocolate with cream in a fondue pot over low heat. Stir in Kirsch. Spear marshmallows, strawberries, banana slices, pineapple chunks, and pretzels with fondue forks and dip into the melted chocolate."
+    },
+    {
+      "name": "Älplermagronen (Alpine Macaroni)",
+      "ingredients": ["macaroni pasta", "potatoes", "bacon", "onion", "Emmental cheese", "cream", "butter", "apple sauce"],
+      "instructions": "Cook macaroni pasta and potatoes until tender. Sauté bacon and onion until golden. Drain the pasta and potatoes and mix with the bacon and onion mixture. Stir in grated Emmental cheese and cream. Serve hot with a dollop of apple sauce."
+    },
+    {
+      "name": "Toblerone Mousse",
+      "ingredients": ["Toblerone chocolate", "cream", "egg whites", "sugar", "vanilla extract", "whipped cream", "Toblerone chocolate pieces"],
+      "instructions": "Melt Toblerone chocolate with cream in a heatproof bowl over simmering water. Beat egg whites with sugar until stiff peaks form. Fold the melted chocolate mixture into the egg whites. Add vanilla extract and fold in whipped cream. Pour into serving glasses and refrigerate until set. Garnish with Toblerone chocolate pieces before serving."
+    },
+    {
+      "name": "Zuger Kirschtorte (Zug Cherry Cake)",
+      "ingredients": ["eggs", "sugar", "flour", "cornstarch", "baking powder", "butter", "Kirsch", "cherries", "whipped cream", "chocolate shavings"],
+      "instructions": "Beat eggs with sugar until light and fluffy. Fold in sifted flour, cornstarch, and baking powder. Melt butter and fold into the batter. Pour into a cake pan and bake until golden brown. Allow to cool, then slice in half horizontally. Brush each layer with Kirsch and spread whipped cream and cherries between the layers. Frost the cake with whipped cream and decorate with chocolate shavings."
+    }
+  ]
+}
+
+
