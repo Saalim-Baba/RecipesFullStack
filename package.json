@@ -1,0 +1,10 @@
+{
+  "name": "Recipes",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
+  }
+}

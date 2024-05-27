@@ -1,6 +1,7 @@
 const express = require('express')
 const fs = require("fs")
 const router = express.Router()
+const recipes = require("./recipes.json")
 
 
 router.get("/home", (request, response) => {
@@ -8,7 +9,7 @@ router.get("/home", (request, response) => {
     }
 )
 router.get("/overview", (request, response) => {
-    response.
-    }
-)
+        const titles = Object.keys(recipes);
+        response.json(titles);
+})
 module.exports = router
