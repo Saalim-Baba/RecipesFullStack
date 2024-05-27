@@ -362,7 +362,61 @@
       "ingredients": ["eggs", "sugar", "flour", "cornstarch", "baking powder", "butter", "Kirsch", "cherries", "whipped cream", "chocolate shavings"],
       "instructions": "Beat eggs with sugar until light and fluffy. Fold in sifted flour, cornstarch, and baking powder. Melt butter and fold into the batter. Pour into a cake pan and bake until golden brown. Allow to cool, then slice in half horizontally. Brush each layer with Kirsch and spread whipped cream and cherries between the layers. Frost the cake with whipped cream and decorate with chocolate shavings."
     }
+  ],
+  "French": [
+    {
+      "name": "Coq au Vin",
+      "ingredients": ["chicken thighs", "red wine", "bacon", "onion", "carrot", "garlic", "mushrooms", "thyme", "bay leaf", "flour", "butter", "salt", "black pepper", "parsley"],
+      "instructions": "Marinate chicken thighs in red wine overnight. In a Dutch oven, cook bacon until crispy. Remove bacon and brown chicken in bacon fat. Sauté chopped onion, carrot, and garlic until softened. Add chicken back to the pot along with mushrooms, thyme, and bay leaf. Sprinkle with flour and cook until flour is browned. Pour in marinade and enough chicken broth to cover. Simmer until chicken is cooked through and sauce is thickened. Season with salt and pepper. Serve hot, garnished with chopped parsley."
+    },
+    {
+      "name": "Boeuf Bourguignon",
+      "ingredients": ["beef stew meat", "red wine", "bacon", "onion", "carrot", "garlic", "mushrooms", "thyme", "bay leaf", "beef broth", "flour", "butter", "salt", "black pepper", "parsley"],
+      "instructions": "Marinate beef stew meat in red wine overnight. In a Dutch oven, cook bacon until crispy. Remove bacon and brown beef in bacon fat. Sauté chopped onion, carrot, and garlic until softened. Add beef back to the pot along with mushrooms, thyme, and bay leaf. Sprinkle with flour and cook until flour is browned. Pour in marinade and enough beef broth to cover. Simmer until beef is tender and sauce is thickened. Season with salt and pepper. Serve hot, garnished with chopped parsley."
+    },
+    {
+      "name": "Ratatouille",
+      "ingredients": ["eggplant", "zucchini", "bell peppers", "onion", "garlic", "tomatoes", "olive oil", "thyme", "basil", "oregano", "salt", "black pepper"],
+      "instructions": "Slice eggplant, zucchini, and bell peppers. Chop onion and mince garlic. Sauté onion and garlic in olive oil until softened. Add sliced vegetables, diced tomatoes, and herbs to the pot. Simmer until vegetables are tender. Season with salt and pepper. Serve hot or cold."
+    },
+    {
+      "name": "Croque Monsieur",
+      "ingredients": ["bread slices", "ham", "Gruyère cheese", "butter", "flour", "milk", "nutmeg", "Dijon mustard"],
+      "instructions": "Spread Dijon mustard on bread slices. Layer with ham and Gruyère cheese. Top with another slice of bread. Melt butter in a skillet and cook sandwiches until golden brown and crispy on both sides. For the sauce, melt butter in a saucepan, whisk in flour, and cook until golden. Gradually whisk in milk until smooth and thickened. Season with nutmeg, salt, and pepper. Pour sauce over sandwiches before serving."
+    },
+    {
+      "name": "Salade Niçoise",
+      "ingredients": ["tuna", "lettuce", "tomatoes", "cucumber", "red onion", "bell peppers", "hard-boiled eggs", "anchovies", "olives", "olive oil", "red wine vinegar", "Dijon mustard", "garlic", "salt", "black pepper"],
+      "instructions": "Arrange torn lettuce leaves on a platter. Top with sliced tomatoes, cucumber, red onion, bell peppers, halved hard-boiled eggs, tuna, anchovies, and olives. Whisk together olive oil, red wine vinegar, Dijon mustard, minced garlic, salt, and pepper to make the dressing. Drizzle dressing over the salad before serving."
+    },
+    {
+      "name": "French Onion Soup",
+      "ingredients": ["onions", "butter", "beef broth", "red wine", "baguette slices", "Gruyère cheese", "salt", "black pepper", "thyme"],
+      "instructions": "Slice onions thinly. Sauté onions in butter until caramelized. Deglaze the pan with red wine and cook until reduced. Add beef broth and thyme. Simmer for 20-30 minutes. Season with salt and pepper. Toast baguette slices. Ladle soup into oven-safe bowls, top with a slice of baguette, and sprinkle with grated Gruyère cheese. Broil until cheese is bubbly and golden brown."
+    },
+    {
+      "name": "Beef Wellington",
+      "ingredients": ["beef tenderloin", "puff pastry", "mushrooms", "shallots", "thyme", "butter", "Dijon mustard", "egg", "salt", "black pepper"],
+      "instructions": "Sear beef tenderloin until browned on all sides. Sauté chopped mushrooms, shallots, and thyme in butter until softened. Season with salt and pepper. Spread Dijon mustard on beef. Roll out puff pastry and spread mushroom mixture on top. Place beef on top and wrap with puff pastry, sealing the edges. Brush with beaten egg. Bake until pastry is golden brown and beef is cooked to desired doneness."
+    },
+    {
+      "name": "Crème Brûlée",
+      "ingredients": ["heavy cream", "egg yolks", "sugar", "vanilla bean", "hot water"],
+      "instructions": "Preheat oven to 300°F (150°C). Heat heavy cream with scraped vanilla bean until simmering. In a bowl, whisk together egg yolks and sugar until pale and thick. Slowly pour hot cream into the egg mixture, whisking constantly. Strain mixture and pour into ramekins. Place ramekins in a baking dish and fill with hot water until halfway up the sides of the ramekins. Bake for 30-40 minutes, or until set. Chill in the refrigerator. Before serving, sprinkle sugar on top and caramelize with a kitchen torch."
+    },
+    {
+      "name": "Bouillabaisse",
+      "ingredients": ["assorted fish (such as snapper, cod, and shrimp)", "fennel", "onion", "leek", "celery", "tomatoes", "garlic", "saffron", "fish stock", "white wine", "olive oil", "baguette slices", "rouille"],
+      "instructions": "Sauté chopped fennel, onion, leek, celery, and garlic in olive oil until softened. Add chopped tomatoes, saffron, fish stock, and white wine. Simmer for 20-30 minutes. Season with salt and pepper. Add assorted fish and shrimp to the pot. Simmer until seafood is cooked through. Serve hot with baguette slices and rouille."
+    },
+    {
+      "name": "Quiche Lorraine",
+      "ingredients": ["pie crust", "bacon", "Gruyère cheese", "eggs", "heavy cream", "salt", "black pepper", "nutmeg"],
+      "instructions": "Preheat oven to 375°F (190°C). Cook bacon until crispy and chop into pieces. Sprinkle bacon and grated Gruyère cheese into a pre-baked pie crust. Whisk together eggs, heavy cream, salt, pepper, and nutmeg. Pour mixture into the pie crust. Bake for 35-40 minutes, or until set and golden brown."
+    }
   ]
+
+
 }
 
 
