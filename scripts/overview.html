@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>W3.CSS Template</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/output.css">
+    <title>Overview</title>
     <style>
         body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
         .w3-bar-block .w3-bar-item {padding:20px}
@@ -14,147 +13,75 @@
 <body>
 
 <!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()"
-       class="w3-bar-item w3-button">Close Menu</a>
-    <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+<nav class="fixed inset-y-0 left-0 bg-white shadow-lg transform transition-transform ease-in-out duration-300 -translate-x-full w-40 md:w-64 z-50" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="block py-4 px-6 text-lg text-gray-800 font-semibold">Close Menu</a>
+    <a href="#food" onclick="w3_close()" class="block py-4 px-6 text-lg text-gray-800 font-semibold">Overview</a>
+    <a href="#about" onclick="w3_close()" class="block py-4 px-6 text-lg text-gray-800 font-semibold">About</a>
 </nav>
 
 <!-- Top menu -->
-<div class="w3-top">
-    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-        <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
-        <div class="w3-right w3-padding-16">Mail</div>
-        <div class="w3-center w3-padding-16">My Food</div>
+<div class="top-0 left-0 right-0 bg-white shadow-md">
+    <div class="max-w-screen-lg mx-auto flex justify-between items-center py-4 px-6">
+        <button class="block md:hidden text-3xl text-gray-800 focus:outline-none" onclick="w3_open()">☰</button>
+        <h2 class="text-3xl text-gray-800 font-semibold">Overview</h2>
     </div>
 </div>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-
-    <!-- First Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-        <div class="w3-quarter">
-            <img src="italian/italian_cuisine.jpg" alt="Italian" style="width: 250px; height: 150px">
-            <h3>Italian</h3>
-            <p>Delve into classic Italian favorites like Spaghetti Carbonara and Tiramisu.</p>
+<div class="w-full max-w-screen-lg mx-auto px-6 md:px-24 lg:px-48 py-8 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="food">
+        <div>
+            <img src='/images/italian/italian_cuisine.jpg' alt="Italian" class=" w-80 h-36">
+            <h3 class="text-xl font-semibold mt-4">Italian</h3>
+            <p class="mt-2">Delve into classic Italian favorites like Spaghetti Carbonara and Tiramisu.</p>
         </div>
-        <div class="w3-quarter">
-            <img src="indian/indian_cuisine.jpg" alt="Indian" style="width: 250px; height: 150px">
-            <h3>Indian</h3>
-            <p>Explore the rich flavors of Indian cuisine with dishes like Chicken Tikka Masala and Dal Tadka.</p>
+        <div>
+            <img src='/images/indian/indian_cuisine.jpg' alt="Indian" class="w-80 h-36">
+            <h3 class="text-xl font-semibold mt-4">Indian</h3>
+            <p class="mt-2">Explore the rich flavors of Indian cuisine with dishes like Chicken Tikka Masala and Dal Tadka.</p>
         </div>
-        <div class="w3-quarter">
-            <img src="chinese/chinese_cuisine.jpg" alt="Chinese" style="width:250px; height:150px">
-            <h3>Chinese</h3>
-            <p>Enjoy traditional Chinese dishes like Kung Pao Chicken and Dim Sum Dumplings.</p>
+        <div>
+            <img src='/images/chinese/chinese_cuisine.jpg' alt="Chinese" class="w-80 h-36">
+            <h3 class="text-xl font-semibold mt-4">Chinese</h3>
+            <p class="mt-2">Enjoy traditional Chinese dishes like Kung Pao Chicken and Dim Sum Dumplings.</p>
         </div>
-        <div class="w3-quarter">
-            <img src="mexican/mexian_cuisine.jpg" alt="Mexican" style="width:250px; height:150px">
-            <h3>Mexican</h3>
-            <p>Savor the vibrant tastes of Mexican food with Beef Tacos and Chicken Enchiladas.</p>
+        <div>
+            <img src='/images/mexican/mexian_cuisine.jpg' alt="Mexican" class="w-80 h-36">
+            <h3 class="text-xl font-semibold mt-4">Mexican</h3>
+            <p class="mt-2">Savor the vibrant tastes of Mexican food with Beef Tacos and Chicken Enchiladas.</p>
         </div>
     </div>
-
-    <!-- Second Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center">
-        <div class="w3-quarter">
-            <img src="american/amercian_cuisine.jpg" alt="American" style="width:250px; height:150px">
-            <h3>American</h3>
-            <p>Classic American dishes like Burgers and Macaroni Cheese await you.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div>
+            <img src="/images/american/amercian_cuisine.jpg" alt="American" class="w-80 h-36">
+            <h3 class="text-xl font-semibold mt-4">American</h3>
+            <p class="mt-2">Classic American dishes like Burgers and Macaroni Cheese await you.</p>
         </div>
-        <div class="w3-quarter">
-            <img src="german/german_cuisine.png" alt="German" style="width:250px; height:150px">
-            <h3>German</h3>
-            <p>Indulge in German specialties such as Bratwurst with Sauerkraut and Wiener Schnitzel.</p>
+        <div>
+            <img src="/images/german/german_cuisine.png" alt="German" class="w-80 h-36">
+            <h3 class="text-xl font-semibold mt-4">German</h3>
+            <p class="mt-2">Indulge in German specialties such as Bratwurst with Sauerkraut and Wiener Schnitzel.</p>
         </div>
-        <div class="w3-quarter">
-            <img src="swiss/swiss_cuisine.jpg" alt="Swiss" style="width:250px; height:150px">
-            <h3>Swiss</h3>
-            <p>Delight in Swiss delicacies like Fondue and Rösti.</p>
+        <div>
+            <img src="/images/swiss/swiss_cuisine.jpg" alt="Swiss" class="w-80 h-36">
+            <h3 class="text-xl font-semibold mt-4">Swiss</h3>
+            <p class="mt-2">Delight in Swiss delicacies like Fondue and Rösti.</p>
         </div>
-        <div class="w3-quarter">
-            <img src="french/french_cuisine.jpg" alt="French" style="width:250px; height:150px">
-            <h3>French</h3>
-            <p>Get a taste of this spicy, sweet, and deep-fried chicken dish from the Hunan Province.</p>
+        <div>
+            <img src="/images/french/french_cuisine.jpg" alt="French" class="w-80 h-36">
+            <h3 class="text-xl font-semibold mt-4">French</h3>
+            <p class="mt-1">Get a taste of French cuisine with dishes like Coq au Vin and Beef Bourguignon.</p>
         </div>
     </div>
-
-
-    <!-- Pagination -->
-    <div class="w3-center w3-padding-32">
-        <div class="w3-bar">
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-            <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-        </div>
-    </div>
-
-    <hr id="about">
-
-    <!-- About Section -->
-    <div class="w3-container w3-padding-32 w3-center">
-        <h3>About Me, The Food Man</h3><br>
-        <img src="/w3images/chef.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
-        <div class="w3-padding-32">
-            <h4><b>I am Who I Am!</b></h4>
-            <h6><i>With Passion For Real, Good Food</i></h6>
-            <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-    </div>
-    <hr>
-
-    <!-- Footer -->
-    <footer class="w3-row-padding w3-padding-32">
-        <div class="w3-third">
-            <h3>FOOTER</h3>
-            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-        </div>
-
-        <div class="w3-third">
-            <h3>BLOG POSTS</h3>
-            <ul class="w3-ul w3-hoverable">
-                <li class="w3-padding-16">
-                    <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-                    <span class="w3-large">Lorem</span><br>
-                    <span>Sed mattis nunc</span>
-                </li>
-                <li class="w3-padding-16">
-                    <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-                    <span class="w3-large">Ipsum</span><br>
-                    <span>Praes tinci sed</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="w3-third w3-serif">
-            <h3>POPULAR TAGS</h3>
-            <p>
-                <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
-                <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
-                <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
-                <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
-                <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
-            </p>
-        </div>
-    </footer>
-
-    <!-- End page content -->
 </div>
 
 <script>
     // Script to open and close sidebar
     function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("mySidebar").classList.remove('-translate-x-full');
     }
 
     function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("mySidebar").classList.add('-translate-x-full');
     }
 </script>
 
