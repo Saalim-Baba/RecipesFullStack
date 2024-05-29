@@ -5,85 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/output.css">
     <title>Overview</title>
-    <style>
-        body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-        .w3-bar-block .w3-bar-item {padding:20px}
-    </style>
 </head>
 <body>
 
-<!-- Sidebar (hidden by default) -->
-<nav class="fixed inset-y-0 left-0 bg-white shadow-lg transform transition-transform ease-in-out duration-300 -translate-x-full w-40 md:w-64 z-50" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="block py-4 px-6 text-lg text-gray-800 font-semibold">Close Menu</a>
-    <a href="#food" onclick="w3_close()" class="block py-4 px-6 text-lg text-gray-800 font-semibold">Overview</a>
-    <a href="#about" onclick="w3_close()" class="block py-4 px-6 text-lg text-gray-800 font-semibold">About</a>
-</nav>
+    <nav class='shadow-2xl w-screen top-0 bg-gray-100 py-10  flex flex-col justify-center items-center'>
+        <div class='bg-center'>
+            <h2 class='text-2xl font-serif'>Overview</h2>
+        </div>
+    </nav>
 
-<!-- Top menu -->
-<div class="top-0 left-0 right-0 bg-white shadow-md">
-    <div class="max-w-screen-lg mx-auto flex justify-between items-center py-4 px-6">
-        <button class="block md:hidden text-3xl text-gray-800 focus:outline-none" onclick="w3_open()">☰</button>
-        <h2 class="text-3xl text-gray-800 font-semibold">Overview</h2>
-    </div>
-</div>
-
-<div class="w-full max-w-screen-lg mx-auto px-6 md:px-24 lg:px-48 py-8 mt-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="food">
-        <div>
-            <img src='/images/italian/italian_cuisine.jpg' alt="Italian" class=" w-80 h-36">
-            <h3 class="text-xl font-semibold mt-4">Italian</h3>
-            <p class="mt-2">Delve into classic Italian favorites like Spaghetti Carbonara and Tiramisu.</p>
+    <div >
+        <div id="food" class='w-screen my-10'>
+            <div class='flex flex-row [&>div>p]:font-serif [&>div>p]:text-xs [&>div]:justify-center'>
+                <div class='w-[200px] h-auto border-2'>
+                    <img src='/images/italian/italian_cuisine.jpg' alt="Italian" class='h-[144px] w-auto'>
+                    <h3>Italian</h3>
+                    <p>Delve into classic Italian favorites like Spaghetti Carbonara and Tiramisu.</p>
+                </div>
+                <div class='w-[200px] h-auto border-2'>
+                    <img src='/images/indian/indian_cuisine.jpg' alt="Indian" class='h-[144px] w-auto'>
+                    <h3>Indian</h3>
+                    <p>Explore the rich flavors of Indian cuisine with dishes like Chicken Tikka Masala and Dal Tadka.</p>
+                </div>
+                <div class='w-[200px] h-auto border-2'>
+                    <img src='/images/chinese/chinese_cuisine.jpg' alt="Chinese" class='h-[144px] w-auto' >
+                    <h3>Chinese</h3>
+                    <p>Enjoy traditional Chinese dishes like Kung Pao Chicken and Dim Sum Dumplings.</p>
+                </div>
+                <div class='w-[200px] h-auto border-2'>
+                    <img src='/images/mexican/mexican_cuisine.jpg' alt="Mexican" class='h-[144px] w-auto'>
+                    <h3>Mexican</h3>
+                    <p>Savor the vibrant tastes of Mexican food with Beef Tacos and Chicken Enchiladas.</p>
+                </div>
+            </div>
         </div>
         <div>
-            <img src='/images/indian/indian_cuisine.jpg' alt="Indian" class="w-80 h-36">
-            <h3 class="text-xl font-semibold mt-4">Indian</h3>
-            <p class="mt-2">Explore the rich flavors of Indian cuisine with dishes like Chicken Tikka Masala and Dal Tadka.</p>
-        </div>
-        <div>
-            <img src='/images/chinese/chinese_cuisine.jpg' alt="Chinese" class="w-80 h-36">
-            <h3 class="text-xl font-semibold mt-4">Chinese</h3>
-            <p class="mt-2">Enjoy traditional Chinese dishes like Kung Pao Chicken and Dim Sum Dumplings.</p>
-        </div>
-        <div>
-            <img src='/images/mexican/mexian_cuisine.jpg' alt="Mexican" class="w-80 h-36">
-            <h3 class="text-xl font-semibold mt-4">Mexican</h3>
-            <p class="mt-2">Savor the vibrant tastes of Mexican food with Beef Tacos and Chicken Enchiladas.</p>
-        </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div>
-            <img src="/images/american/amercian_cuisine.jpg" alt="American" class="w-80 h-36">
-            <h3 class="text-xl font-semibold mt-4">American</h3>
-            <p class="mt-2">Classic American dishes like Burgers and Macaroni Cheese await you.</p>
-        </div>
-        <div>
-            <img src="/images/german/german_cuisine.png" alt="German" class="w-80 h-36">
-            <h3 class="text-xl font-semibold mt-4">German</h3>
-            <p class="mt-2">Indulge in German specialties such as Bratwurst with Sauerkraut and Wiener Schnitzel.</p>
-        </div>
-        <div>
-            <img src="/images/swiss/swiss_cuisine.jpg" alt="Swiss" class="w-80 h-36">
-            <h3 class="text-xl font-semibold mt-4">Swiss</h3>
-            <p class="mt-2">Delight in Swiss delicacies like Fondue and Rösti.</p>
-        </div>
-        <div>
-            <img src="/images/french/french_cuisine.jpg" alt="French" class="w-80 h-36">
-            <h3 class="text-xl font-semibold mt-4">French</h3>
-            <p class="mt-1">Get a taste of French cuisine with dishes like Coq au Vin and Beef Bourguignon.</p>
+            <div class='flex flex-row [&>div>p]:font-serif [&>div>p]:text-xs'>
+                <div class='w-[200px] h-auto border-2'>
+                    <img src="/images/american/amercian_cuisine.jpg" alt="American">
+                    <h3>American</h3>
+                    <p>Classic American dishes like Burgers and Macaroni Cheese await you.</p>
+                </div>
+                <div class='w-[200px] h-auto border-2'>
+                    <img src="/images/german/german_cuisine.jpg" alt="German">
+                    <h3>German</h3>
+                    <p>Indulge in German specialties such as Bratwurst with Sauerkraut and Wiener Schnitzel.</p>
+                </div>
+                <div class='w-[200px] h-auto border-2'>
+                    <img src="/images/swiss/swiss_cuisine.jpg" alt="Swiss">
+                    <h3>Swiss</h3>
+                    <p>Delight in Swiss delicacies like Fondue and Rösti.</p>
+                </div>
+                <div class='w-[200px] h-auto border-2'>
+                    <img src="/images/french/french_cuisine.jpg" alt="French">
+                    <h3>French</h3>
+                    <p>Get a taste of French cuisine with dishes like Coq au Vin and Beef Bourguignon.</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<script>
-    // Script to open and close sidebar
-    function w3_open() {
-        document.getElementById("mySidebar").classList.remove('-translate-x-full');
-    }
-
-    function w3_close() {
-        document.getElementById("mySidebar").classList.add('-translate-x-full');
-    }
-</script>
-
 </body>
 </html>
