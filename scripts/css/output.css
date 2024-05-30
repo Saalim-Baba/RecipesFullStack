@@ -599,16 +599,8 @@ video {
   margin-top: 1rem;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
-}
-
-.hidden {
-  display: none;
 }
 
 .h-0 {
@@ -705,14 +697,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.p-24 {
-  padding: 6rem;
-}
-
-.p-\[100px\] {
-  padding: 100px;
 }
 
 .px-3 {
@@ -863,10 +847,6 @@ video {
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
-}
-
-.\[\&\>button\>em\]\:border-2>button>em {
-  border-width: 2px;
 }
 
 .\[\&\>button\>em\]\:italic>button>em {

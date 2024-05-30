@@ -8,15 +8,13 @@ router.get('/home', (request, response) => {
     response.sendFile(path.join(__dirname, 'public', 'overview.html'));
 });
 
+router.get('/data', (request, response) => {
+    response.json(recipes)
+});
+
+
 router.get("/overview", (request, response) => {
-    const titles = Object.keys(recipes);
-    let german = "";
-    for (let y = 0; y < titles.length; y++) {
-        for (let i = 0; i < recipes[titles[y]].length; i++) {
-            german += recipes[titles[y]][i].name;
-        }
-    }
-    response.json(german);
+    response.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
