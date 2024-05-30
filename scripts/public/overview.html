@@ -7,10 +7,8 @@
     <title>Overview</title>
 </head>
 <body>
-<div id='side-bar-menu' class='flex left-0 flex-col bg-gray-300 w-screen'>
-</div>
 
-<nav class='shadow-2xl w-screen top-0 bg-gray-100 py-7 flex flex-row items-center'>
+<nav class='shadow-2xl w-screen top-0 bg-gray-100 py-7 flex flex-row items-center z-50'>
     <div class='flex-0 flex items-center ml-10'>
         <button id='reveal_side_bar' class='text-2xl font-serif hover:bg-gray-200 px-3 py-2'>☰</button>
     </div>
@@ -23,6 +21,11 @@
         </a>
     </div>
 </nav>
+<div id="side-bar-menu" class="fixed [&>button>em]:italic transition-all duration-300 ease-in-out top-[6.5rem] left-0 flex flex-col bg-gray-100 h-0 w-52 z-10 shadow-right overflow-hidden items-center justify-evenly">
+    <button><a>Home</a></button>
+    <button><a>Über mich</a></button>
+    <button><a>GitHub</a></button>
+</div>
 <div>
     <div id="food" class='w-screen mt-14'>
         <div class='flex flex-row flex-wrap font-serif justify-center py-11 md:p-0 space-x-0 [&>div>h3]:p-5 lg:space-x-4 [&>div]:w-[300px]'>

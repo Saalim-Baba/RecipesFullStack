@@ -10,7 +10,11 @@ module.exports = {
         "./components/public/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            boxShadow: {
+                'right': '10px 0 5px -2px rgba(0, 0, 0, 0.1)',
+            }
+        },
     },
     plugins: [],
 }
