@@ -2,12 +2,12 @@
 module.exports = {
     mode: "jit",
     content: [
-        "./scripts/overview.html",
-        "./scripts/index.html",
-        "./scripts/**/*.{js,jsx,ts,tsx}",
-        "./scripts/**/*.{js,jsx,ts,tsx}",
-        "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}",
+        "./scripts/public/overview.html",
+        "./scripts/public/index.html",
+        "./scripts/public/**/*.{js,jsx,ts,tsx}",
+        "./scripts/public/**/*.{js,jsx,ts,tsx}",
+        "./pages/public/**/*.{js,ts,jsx,tsx}",
+        "./components/public/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         extend: {},

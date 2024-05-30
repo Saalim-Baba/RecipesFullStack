@@ -5,7 +5,7 @@ const recipes = require("./recipes.json");
 
 
 router.get('/home', (request, response) => {
-    response.sendFile(path.join(__dirname, 'overview.html'));
+    response.sendFile(path.join(__dirname, 'public', 'overview.html'));
 });
 
 router.get("/overview", (request, response) => {
@@ -18,6 +18,7 @@ router.get("/overview", (request, response) => {
     }
     response.json(german);
 });
+
 
 module.exports = router;
 

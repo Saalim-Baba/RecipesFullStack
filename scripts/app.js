@@ -14,6 +14,7 @@ app.use(session({
     cookie: {}
 }))
 app.use(express.json())
+app.use(express.static("./public"));
 app.use('/recipes', recipesController)
 app.use('', securityController)
 app.use('/images', express.static(path.join(__dirname,'images')));
