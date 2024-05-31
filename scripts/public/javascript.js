@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger_button.addEventListener("click", () => {
         if (side_bar.classList.contains('h-0')) {
             side_bar.classList.remove('h-0');
-            side_bar.classList.add('h-80');
+            side_bar.classList.add('h-56');
         } else {
-            side_bar.classList.remove('h-80');
+            side_bar.classList.remove('h-56');
             side_bar.classList.add('h-0');
         }
 
@@ -23,8 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
             titles.forEach(title => {
                 data[title].forEach(recipe => {
                     const node = document.createElement("div");
-                    node.classList.add("border-2", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110");
-
+                    node.classList.add("border-2", "flex", "flex-row", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110");
+                    recipesContainer.classList.add(
+                        "flex", "flex-row", "flex-wrap", "font-serif", "justify-center",
+                        "py-11", "md:p-0", "space-x-0", "[&>div>h3]:p-5", "lg:space-x-4",
+                        "[&>div]:w-[300px]"
+                    );
                     const img = document.createElement("img");
                     img.src = `../images/${recipe.name}`;
                     img.classList.add("h-auto", "w-auto");
