@@ -13,7 +13,7 @@ router.get('/data', (request, response) => {
 });
 
 
-router.get("/overview", (request, response) => {
+router.get("/:type", (request, response) => {
     response.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
