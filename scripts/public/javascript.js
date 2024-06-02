@@ -26,24 +26,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (title.toLowerCase() === recipe_genre){
                     data[title].forEach(recipe => {
                         const node = document.createElement("div");
-                        node.classList.add("border-2", "flex", "flex-row", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110");
+                        node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110");
                         recipesContainer.classList.add(
                             "flex", "flex-row", "flex-wrap", "font-serif", "justify-center",
-                            "py-11", "md:p-0", "space-x-0", "[&>div>h3]:p-5", "lg:space-x-4",
-                            "[&>div]:w-[300px]"
+                            "py-11", "md:p-0", "[&>div>h3]:p-5", "[&>div]:w-[220px]",
+                            "gap-y-5", "gap-x-5", "[&>div:not(:last-child)]:lg:space-x-4", "mt-11"
                         );
                         const img = document.createElement("img");
-                        img.src = `../images/${recipe.name}`;
-                        img.classList.add("h-auto", "w-auto");
+                        img.src = `../images/${recipe_genre}/${recipe.name}.jpg`;
+                        img.classList.add("object-contain","h-auto", "w-auto");
 
-                        const name = document.createTextNode(recipe.name);
+                        const name = document.createElement("h3");
+                        name.innerText = recipe.name
 
                         node.appendChild(img);
                         node.appendChild(name);
                         recipesContainer.appendChild(node);
                 })
 
-                };
+                }
             });
         })
         .catch(error => console.error('Error fetching recipes:', error));

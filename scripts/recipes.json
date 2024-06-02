@@ -1,8 +1,8 @@
 {
   "Italian": [
     {
-      "name": "Spaghetti Carbonara",
-      "ingredients": ["spaghetti", "eggs", "bacon", "Parmesan cheese", "black pepper"],
+      "name": "Spaghetti Bolognese",
+      "ingredients": ["spaghetti", "eggs", "beef", "Parmesan cheese", "black pepper"],
       "instructions": "Cook spaghetti according to package instructions. Meanwhile, cook bacon until crispy. In a bowl, whisk eggs, Parmesan cheese, and black pepper. Drain spaghetti and add to the bacon pan. Remove from heat and quickly stir in the egg mixture. Serve immediately."
     },
     {
@@ -120,7 +120,7 @@
       "instructions": "Sauté garlic, ginger, and green onions until fragrant. Add ground pork and cook until browned. Stir in chili bean paste and Sichuan peppercorns. Add diced tofu and gently stir to combine. Mix cornstarch with water and pour into the pan. Cook until sauce thickens. Drizzle with soy sauce, rice wine, and sesame oil. Serve hot with rice."
     },
     {
-      "name": "Sweet and Sour Pork",
+      "name": "Peking Roast Duck",
       "ingredients": ["pork loin", "bell peppers", "pineapple chunks", "onion", "garlic", "ginger", "cornstarch", "soy sauce", "rice vinegar", "ketchup", "brown sugar"],
       "instructions": "Cut pork loin into bite-sized pieces. Coat with cornstarch and fry until golden brown. Sauté garlic, ginger, bell peppers, onion, and pineapple chunks until tender. Mix soy sauce, rice vinegar, ketchup, and brown sugar. Pour over the pork and vegetables. Cook until sauce thickens. Serve hot with rice."
     },

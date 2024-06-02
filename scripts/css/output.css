@@ -591,6 +591,10 @@ video {
   margin-right: 2.5rem;
 }
 
+.mt-11 {
+  margin-top: 2.75rem;
+}
+
 .mt-14 {
   margin-top: 3.5rem;
 }
@@ -611,16 +615,12 @@ video {
   height: 2.5rem;
 }
 
-.h-80 {
-  height: 20rem;
+.h-56 {
+  height: 14rem;
 }
 
 .h-auto {
   height: auto;
-}
-
-.h-56 {
-  height: 14rem;
 }
 
 .w-10 {
@@ -641,6 +641,10 @@ video {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-1 {
@@ -675,14 +679,38 @@ video {
   justify-content: space-evenly;
 }
 
+.gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
+.gap-x-5 {
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
+
+.gap-y-5 {
+  row-gap: 1.25rem;
+}
+
 .space-x-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0px * var(--tw-space-x-reverse));
   margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .rounded-lg {
@@ -701,6 +729,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .px-3 {
@@ -853,14 +886,50 @@ video {
   }
 }
 
+.\[\&\>a\>div\>h3\]\:p-5>a>div>h3 {
+  padding: 1.25rem;
+}
+
+.\[\&\>a\>div\]\:w-\[300px\]>a>div {
+  width: 300px;
+}
+
 .\[\&\>button\>em\]\:italic>button>em {
   font-style: italic;
+}
+
+@media (min-width: 1024px) {
+  .\[\&\>div\:not\(\:last-child\)\]\:lg\:space-x-4>div:not(:last-child) > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
 }
 
 .\[\&\>div\>h3\]\:p-5>div>h3 {
   padding: 1.25rem;
 }
 
+.\[\&\>div\]\:w-\[275px\]>div {
+  width: 275px;
+}
+
 .\[\&\>div\]\:w-\[300px\]>div {
   width: 300px;
+}
+
+.\[\&\>div\]\:w-\[260px\]>div {
+  width: 260px;
+}
+
+.\[\&\>div\]\:w-\[250px\]>div {
+  width: 250px;
+}
+
+.\[\&\>div\]\:w-\[200px\]>div {
+  width: 200px;
+}
+
+.\[\&\>div\]\:w-\[220px\]>div {
+  width: 220px;
 }
