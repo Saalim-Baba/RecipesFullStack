@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const footer = document.getElementById("footer");
     const loader = document.getElementById("loader")
     const real_body = document.body
+    const param = (window.location.href).split("/")
+    const recipe_genre = param[param.length-1]
+    const recipe_name = param[param.length-2]
     hamburger_button.addEventListener("click", () => {
         if (side_bar.classList.contains('h-0')) {
             side_bar.classList.remove('h-0');
@@ -17,43 +20,82 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     toggleCheckbox.addEventListener('change', dark_mode);
-
-    const param = (window.location.href).split("/")
-    const recipe_genre = param[param.length-1]
+    /**
+     This is for the display of the recipes in the overview of all recipes inside a genre and if the URL has
+     the name of the recipe in the domain it'll create a node only for the specific recipe
+     Note: The variable name is not chosen smartly, thats why its reassigned in the else statement for better
+     understanding of the code.
+     */
     fetch('/recipes/data')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            const titles = Object.keys(data);
-            const recipesContainer = document.getElementById("recipes");
-            recipesContainer.innerHTML = '';
-            titles.forEach(title => {
-                if (title.toLowerCase() === recipe_genre){
-                    data[title].forEach(recipe => {
-                        const node = document.createElement("div");
-                        node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110");
-                        recipesContainer.classList.add(
-                            "flex", "flex-row", "flex-wrap", "font-serif", "justify-start",
-                            "py-11", "md:p-0", "[&>div>h3]:p-5", "[&>div]:w-[220px]",
-                            "gap-y-5", "gap-x-5", "[&>div:not(:last-child)]:lg:space-x-4", "mt-11",
-                            "ml-14"
-                        );
-                        const img = document.createElement("img");
-                        img.src = `../images/${recipe_genre}/${recipe.name}.jpg`;
-                        img.classList.add("object-contain","h-auto", "w-auto", draggable="false");
-                        const name = document.createElement("h3");
-                        name.innerText = recipe.name
-                        node.appendChild(img);
-                        node.appendChild(name);
-                        recipesContainer.appendChild(node);
-                })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                const titles = Object.keys(data);
+                let recipesContainer;
+                if (recipe_name === "recipes") {
+                    recipesContainer = document.getElementById("recipes");
+                    titles.forEach(title => {
+                        if (title.toLowerCase() === recipe_genre){
+                            data[title].forEach(recipe => {
+                                const node = document.createElement("div");
+                                const node_img = document.createElement("img");
+                                const node_name = document.createElement("h3");
+                                const link = document.createElement("a");
+                                node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110");
+                                recipesContainer.classList.add(
+                                    "flex", "flex-row", "flex-wrap", "font-serif", "justify-start",
+                                    "py-11", "md:p-0", "[&>a>div>h3]:p-5", "[&>a>div]:w-[220px]",
+                                    "gap-y-5", "gap-x-5", "[&>a>div:not(:last-child)]:lg:space-x-4", "mt-11",
+                                    "ml-14"
+                                );
+                                node_img.src = `../images/${recipe_genre}/${recipe.name}.jpg`;
+                                node_img.classList.add("object-contain","h-auto", "w-auto", draggable="false");
+                                node_name.innerText = recipe.name
+                                const formattedname = (recipe.name).replace(/\s+/g, '_');
+                                link.href = `/recipes/${recipe_genre}/${formattedname}`
+                                node.appendChild(node_img);
+                                node.appendChild(node_name);
+                                link.appendChild(node)
+                                recipesContainer.appendChild(link);
+                            })
+                        }
+                    });
+                } else {
+                    /**
+                     This is for the specific recipes, the variable names are not ideal but will be renamed in this function
+                     for better readability.
+                     It's iterating through the titles then through all the recipes inside the genre. If the recipe is found itll create
+                     a div and a display of it
+                     */
+                    const recipe_genre = param[param.length-2]
+                    const recipe_name = param[param.length-1]
+                    recipesContainer = document.getElementById("recipe");
+                    titles.forEach(title => {
+                        if (title.toLowerCase() === recipe_genre) {
+                            data[title].forEach(recipe => {
+                                if (recipe.name === recipe_name.replace(/_/g, ' ')) {
+                                    let node = document.createElement("div");
+                                    let node_img = document.createElement("img");
+                                    let node_name = document.createElement("h3");
+                                    node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110", "w-full", "max-w-4xl");
+                                    recipesContainer.classList.add(
+                                        "flex", "flex-row", "flex-wrap", "font-serif", "justify-center",
+                                        "py-11", "md:p-0", "[&>div>h3]:p-5", "[&>div]:w-[220px]",
+                                        "gap-y-5", "[&>div:not(:last-child)]:lg:space-x-4", "mt-11",
+                                         "w-full"
+                                    );
 
-                }
-            });
+                                    node_img.src = `/images/${recipe_genre}/${recipe.name}.jpg`;
+                                    node_name.innerText = recipe.name
+                                    node.appendChild(node_img);
+                                    node.appendChild(node_name);
+                                    recipesContainer.appendChild(node);
+                                }
+                            })
+                        }
+                    })
+                }}).catch(error => console.error('Error fetching recipes:', error));
 
-
-        })
-        .catch(error => console.error('Error fetching recipes:', error));
     function dark_mode(){
         if (toggleCheckbox.checked) {
             localStorage.setItem('checkboxState', toggleCheckbox.checked);

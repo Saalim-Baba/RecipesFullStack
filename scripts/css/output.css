@@ -554,6 +554,40 @@ video {
   --tw-contain-style:  ;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -634,6 +668,10 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.block {
+  display: block;
 }
 
 .inline {
@@ -730,6 +768,10 @@ video {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .flex-1 {
@@ -900,6 +942,10 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.no-underline {
+  text-decoration-line: none;
 }
 
 .shadow {
@@ -1239,12 +1285,24 @@ video {
   }
 }
 
+@media (min-width: 1024px) {
+  .\[\&\>a\>div\:not\(\:last-child\)\]\:lg\:space-x-4>a>div:not(:last-child) > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
 .\[\&\>a\>div\>h3\]\:p-5>a>div>h3 {
   padding: 1.25rem;
 }
 
 .\[\&\>a\>div\]\:w-\[300px\]>a>div {
   width: 300px;
+}
+
+.\[\&\>a\>div\]\:w-\[220px\]>a>div {
+  width: 220px;
 }
 
 .\[\&\>button\>em\]\:italic>button>em {

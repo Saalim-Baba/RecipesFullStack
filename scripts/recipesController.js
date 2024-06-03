@@ -17,6 +17,11 @@ router.get("/:type", (request, response) => {
     response.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+router.get("/:type/:recipe", (request, response) => {
+    response.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
 
 module.exports = router;
 
