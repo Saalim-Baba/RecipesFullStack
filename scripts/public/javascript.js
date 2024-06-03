@@ -74,22 +74,40 @@ document.addEventListener("DOMContentLoaded", function () {
                         if (title.toLowerCase() === recipe_genre) {
                             data[title].forEach(recipe => {
                                 if (recipe.name === recipe_name.replace(/_/g, ' ')) {
-                                    let node = document.createElement("div");
-                                    let node_img = document.createElement("img");
-                                    let node_name = document.createElement("h3");
-                                    node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110", "w-full", "max-w-4xl");
+                                    const node = document.createElement("div");
+                                    const node_img = document.createElement("img");
+                                    const node_name = document.createElement("h3");
+                                    const ingred_container = document.createElement("div")
+                                    const node_ingredients = document.createElement("ul")
+                                    const node_description = document.createElement("p")
+                                    node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "w-full", "max-w-4xl");
                                     recipesContainer.classList.add(
                                         "flex", "flex-row", "flex-wrap", "font-serif", "justify-center",
-                                        "py-11", "md:p-0", "[&>div>h3]:p-5", "[&>div]:w-[220px]",
+                                        "py-11", "md:p-0", "[&>div>h3]:p-5", "[&>div]:w-[1050px]",
                                         "gap-y-5", "[&>div:not(:last-child)]:lg:space-x-4", "mt-11",
                                          "w-full"
                                     );
-
                                     node_img.src = `/images/${recipe_genre}/${recipe.name}.jpg`;
                                     node_name.innerText = recipe.name
+                                    node_img.width = 300
+                                    recipe.ingredients.forEach(ingredient => {
+                                        const item = document.createElement("li");
+                                        item.innerText = ingredient;
+                                        node_ingredients.appendChild(item);
+                                    });
+                                    node_description.innerText = recipe.instructions;
+                                    ingred_container.classList.add("h-30")
+                                    node_name.classList.add("text-2xl", "font-semibold", "mb-4");
+                                    node_ingredients.classList.add("list-disc", "pl-5", "space-y-1", "mb-4", "columns-2");
+                                    node_description.classList.add("flow-root", "p-6");
+                                    ingred_container.innerText = "Ingredients"
+                                    ingred_container.appendChild(node_ingredients)
                                     node.appendChild(node_img);
                                     node.appendChild(node_name);
+                                    node.appendChild(ingred_container);
+                                    node.appendChild(node_description);
                                     recipesContainer.appendChild(node);
+
                                 }
                             })
                         }
