@@ -271,7 +271,7 @@
       "instructions": "Pound veal cutlets until thin. Dredge in flour, dip in beaten eggs, and coat with breadcrumbs. Fry in hot butter until golden brown and crispy. Serve with lemon wedges, parsley, boiled potatoes, and steamed green beans."
     },
     {
-      "name": "Kartoffelsalat (German Potato Salad)",
+      "name": "German Potato Salad",
       "ingredients": ["potatoes", "bacon", "onion", "vinegar", "sugar", "mustard", "vegetable broth", "salt", "black pepper"],
       "instructions": "Boil potatoes until tender. Meanwhile, fry bacon until crispy and sauté sliced onion until translucent. Slice potatoes and mix with bacon and onion. In a separate bowl, whisk together vinegar, sugar, mustard, and vegetable broth. Pour over the potato mixture and toss to combine. Season with salt and pepper. Serve warm or at room temperature."
     },
@@ -281,12 +281,12 @@
       "instructions": "Marinate beef roast in a mixture of red wine vinegar, sliced onion, carrot, celery, bay leaves, cloves, juniper berries, and brown sugar for several days. Remove beef from the marinade and brown in a hot pan. Strain the marinade and pour over the beef. Add water if needed to cover. Simmer until beef is tender. Crush gingersnap cookies and add to the sauce to thicken. Serve with potato dumplings and red cabbage."
     },
     {
-      "name": "Apfelstrudel (Apple Strudel)",
+      "name": "Apple Strudel",
       "ingredients": ["apples", "sugar", "lemon zest", "cinnamon", "raisins", "bread crumbs", "butter", "phyllo pastry", "powdered sugar"],
       "instructions": "Peel, core, and slice apples. Mix with sugar, lemon zest, cinnamon, and raisins. Sauté breadcrumbs in butter until golden. Lay out phyllo pastry sheets and brush with melted butter. Sprinkle breadcrumbs over the pastry, then layer with the apple mixture. Roll up the pastry and brush with more butter. Bake until golden brown and crispy. Dust with powdered sugar before serving."
     },
     {
-      "name": "Kartoffelsuppe (German Potato Soup)",
+      "name": "German Potato Soup",
       "ingredients": ["potatoes", "onion", "carrot", "celery", "leek", "bacon", "vegetable broth", "bay leaf", "thyme", "salt", "black pepper", "sour cream", "chives"],
       "instructions": "Dice potatoes, onion, carrot, celery, and leek. Cut bacon into small pieces. Sauté bacon until crispy, then remove from the pan. In the same pan, sauté onion, carrot, celery, and leek until softened. Add diced potatoes, vegetable broth, bay leaf, and thyme. Simmer until potatoes are tender. Remove bay leaf and purée soup until smooth. Season with salt and pepper. Serve hot with a dollop of sour cream and chopped chives."
     },
@@ -296,17 +296,17 @@
       "instructions": "Spread mustard on beef slices and top with a slice of bacon, sliced onion, and a pickle spear. Roll up the beef slices and secure with toothpicks. Brown the rouladen in butter in a hot pan. Add beef broth and simmer until beef is tender. Remove rouladen from the pan. Mix flour with sour cream and stir into the sauce to thicken. Serve rouladen with boiled potatoes and red cabbage."
     },
     {
-      "name": "Brezen (German Pretzels)",
+      "name": "German Pretzels",
       "ingredients": ["flour", "water", "yeast", "sugar", "salt", "butter", "baking soda", "pretzel salt"],
       "instructions": "Mix flour, water, yeast, sugar, salt, and melted butter to form a dough. Knead until smooth. Let the dough rise until doubled in size. Divide into pieces and shape into pretzels. Boil pretzels in water mixed with baking soda, then place on a baking sheet. Sprinkle with pretzel salt and bake until golden brown and crispy. Serve warm."
     },
     {
-      "name": "Käsespätzle (Cheese Spaetzle)",
+      "name": "Käsespätzle",
       "ingredients": ["spätzle noodles", "Emmental cheese", "onion", "butter", "sour cream", "salt", "black pepper", "parsley"],
       "instructions": "Cook spätzle noodles according to package instructions. Sauté sliced onion in butter until caramelized. Mix spätzle with grated Emmental cheese, caramelized onion, and sour cream. Season with salt and pepper. Serve hot, garnished with chopped parsley."
     },
     {
-      "name": "Lebkuchen (German Gingerbread Cookies)",
+      "name": "Lebkuchen",
       "ingredients": ["flour", "honey", "sugar", "eggs", "butter", "lemon zest", "cinnamon", "ginger", "cloves", "nutmeg", "almonds", "powdered sugar"],
       "instructions": "Mix flour, honey, sugar, eggs, melted butter, lemon zest, and spices to form a dough. Fold in chopped almonds. Roll out the dough and cut into shapes. Bake until golden brown. Allow to cool, then decorate with powdered sugar icing."
     }
@@ -338,7 +338,7 @@
       "instructions": "Slice Raclette cheese thinly. Boil potatoes until tender. Arrange the cheese, potatoes, pickles, pearl onions, gherkins, and charcuterie on a platter. Place the Raclette cheese slices on individual trays and melt under a Raclette grill. Serve melted cheese over potatoes and accompany with pickles, pearl onions, gherkins, charcuterie, and slices of baguette."
     },
     {
-      "name": "Bündner Nusstorte (Graubünden Nut Cake)",
+      "name": "Bündner Nusstorte",
       "ingredients": ["flour", "sugar", "butter", "eggs", "honey", "cream", "walnuts", "raisins", "cinnamon"],
       "instructions": "Mix flour, sugar, butter, eggs, and honey to form a dough. Press into a tart pan. Spread a layer of cream over the dough. Mix chopped walnuts, raisins, and cinnamon and spread over the cream layer. Bake until golden brown. Allow to cool before slicing."
     },
@@ -348,7 +348,7 @@
       "instructions": "Melt dark chocolate with cream in a fondue pot over low heat. Stir in Kirsch. Spear marshmallows, strawberries, banana slices, pineapple chunks, and pretzels with fondue forks and dip into the melted chocolate."
     },
     {
-      "name": "Älplermagronen (Alpine Macaroni)",
+      "name": "Älplermagronen",
       "ingredients": ["macaroni pasta", "potatoes", "bacon", "onion", "Emmental cheese", "cream", "butter", "apple sauce"],
       "instructions": "Cook macaroni pasta and potatoes until tender. Sauté bacon and onion until golden. Drain the pasta and potatoes and mix with the bacon and onion mixture. Stir in grated Emmental cheese and cream. Serve hot with a dollop of apple sauce."
     },
@@ -358,7 +358,7 @@
       "instructions": "Melt Toblerone chocolate with cream in a heatproof bowl over simmering water. Beat egg whites with sugar until stiff peaks form. Fold the melted chocolate mixture into the egg whites. Add vanilla extract and fold in whipped cream. Pour into serving glasses and refrigerate until set. Garnish with Toblerone chocolate pieces before serving."
     },
     {
-      "name": "Zuger Kirschtorte (Zug Cherry Cake)",
+      "name": "Zuger Kirschtorte",
       "ingredients": ["eggs", "sugar", "flour", "cornstarch", "baking powder", "butter", "Kirsch", "cherries", "whipped cream", "chocolate shavings"],
       "instructions": "Beat eggs with sugar until light and fluffy. Fold in sifted flour, cornstarch, and baking powder. Melt butter and fold into the batter. Pour into a cake pan and bake until golden brown. Allow to cool, then slice in half horizontally. Brush each layer with Kirsch and spread whipped cream and cherries between the layers. Frost the cake with whipped cream and decorate with chocolate shavings."
     }
