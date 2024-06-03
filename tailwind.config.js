@@ -13,6 +13,9 @@ module.exports = {
         extend: {
             boxShadow: {
                 'right': '10px 0 5px -2px rgba(0, 0, 0, 0.1)',
+            },
+            colors: {
+                'custom-gray': '#252525'
             }
         },
     },
