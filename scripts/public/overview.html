@@ -6,95 +6,112 @@
     <link rel="stylesheet" href="/css/output.css">
     <title>Overview</title>
 </head>
-<body>
-
-<nav class='shadow-2xl w-screen top-0 bg-gray-100 py-7 flex flex-row items-center z-50'>
-    <div class='flex-0 flex items-center ml-10'>
-        <button id='reveal_side_bar' class='text-2xl font-serif hover:bg-gray-200 px-3 py-2'>☰</button>
+<div class="flex justify-center items-center text-center relative">
+    <div id="loader" class="animate-pulse flex flex-col items-center gap-4 w-60 mx-auto my-0 min-h-screen justify-center">
+        <div>
+            <div class="w-48 h-6 bg-slate-400 rounded-md"></div>
+            <div class="w-28 h-4 bg-slate-400 mx-auto mt-3 rounded-md"></div>
+        </div>
+        <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+        <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+        <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+        <div class="h-7 bg-slate-400 w-1/2 rounded-md"></div>
     </div>
-    <div class='flex-1 text-center'>
-        <h2 class='text-2xl font-serif'>Overview</h2>
-    </div>
-    <div class='flex-2 flex text-center mr-10'>
-        <a href="https://github.com/milaasHD">
-        <img src='/images/final_05 (1).png' class='h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-125' alt='icon'/>
-        </a>
-    </div>
-</nav>
-<div id="side-bar-menu" class="fixed [&>button>em]:italic transition-all duration-300 ease-in-out top-[6.5rem] left-0 flex flex-col bg-gray-100 h-0 w-52 z-10 shadow-right overflow-hidden items-center justify-evenly">
-    <button><a>Home</a></button>
-    <button><a>Über mich</a></button>
-    <button><a>GitHub</a></button>
 </div>
-<div>
-    <div id="food" class='w-screen mt-14'>
-        <div class='flex flex-row flex-wrap font-serif justify-center py-11 md:p-0 space-x-0 [&>a>div>h3]:p-5 lg:space-x-4 [&>a>div]:w-[300px]'>
-            <a href="/recipes/italian">
-            <div class='border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110'>
-                <img src='/images/italian/italian_cuisine.jpg' alt="Italian" class='h-auto w-auto'>
-                <h3>Italian</h3>
-            </div>
-            </a>
-            <a href="/recipes/indian">
-            <div class='border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110'>
-                <img src='/images/indian/indian_cuisine.jpg' alt="Indian" class='h-auto w-auto'>
-                <h3>Indian</h3>
-            </div>
-            </a>
-            <a href="/recipes/chinese">
-            <div class='border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110'>
-                <img src='/images/chinese/chinese_cuisine.jpg' alt="Chinese" class='h-auto w-auto'>
-                <h3>Chinese</h3>
-            </div>
-            </a>
-            <a href="/recipes/mexican">
-            <div class='border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110'>
-                <img src='/images/mexican/mexican_cuisine.jpg' alt="Mexican" class='h-auto w-auto'>
-                <h3>Mexican</h3>
-            </div>
-
+<body class="overflow-x-hidden">
+<div id="css-body" class="hidden">
+    <nav id="nav" class="shadow-2xl w-screen top-0 bg-gray-100 py-7 flex flex-row items-center z-50">
+        <div class="flex-0 flex items-center ml-10">
+            <button id="reveal_side_bar" class="text-2xl font-serif hover:bg-gray-200 px-3 py-2">☰</button>
+        </div>
+        <div class="flex-1 text-center">
+            <h2 class="text-2xl font-serif">Overview</h2>
+        </div>
+        <div class="flex-2 flex text-center mr-10">
+            <label class="relative inline-flex items-center cursor-pointer mr-16">
+                <input id="toggle-checkbox" class="sr-only peer" value="" type="checkbox" />
+                <div
+                        class=" w-24 h-12 rounded-full ring-0 peer duration-500 outline-none bg-gray-200 overflow-hidden before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center before:content-['☀️'] before:absolute before:h-10 before:w-10 before:top-1/2 before:bg-white before:rounded-full before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700 peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full shadow-lg shadow-gray-400 peer-checked:shadow-lg peer-checked:shadow-gray-700 peer-checked:bg-[#383838] after:content-['🌑'] after:absolute after:bg-[#1d1d1d] after:rounded-full after:top-[4px] after:right-1 after:translate-y-full after:w-10 after:h-10 after:opacity-0 after:transition-all after:duration-700 peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0 "
+                ></div>
+            </label>
+            <a href="https://github.com/milaasHD">
+                <img src="/images/final_05 (1).png" class="h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-125" alt="icon"/>
             </a>
         </div>
+    </nav>
+    <div id="side-bar-menu" class="fixed [&>button>em]:italic transition-all duration-300 ease-in-out top-[6.5rem] left-0 flex flex-col bg-gray-100 h-0 w-52 z-10 shadow-right overflow-hidden items-center justify-evenly">
+        <button><a href="/recipes/home">Home</a></button>
+        <button><a>Über mich</a></button>
+        <button><a href="https://github.com/milaasHD">GitHub</a></button>
     </div>
-    <div class='flex flex-row flex-wrap justify-center font-serif mt-4 py-11 md:p-0 space-x-0 [&>a>div>h3]:p-5 lg:space-x-4 [&>a>div]:w-[300px]'>
-        <a href="/recipes/american">
-            <div class='border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110'>
-            <img src="/images/american/amercian_cuisine.jpg" alt="American" class='h-auto w-auto'>
-            <h3>American</h3>
+    <div>
+        <div id="food" class="w-screen mt-14">
+            <div class="flex flex-row flex-wrap font-serif justify-center py-11 md:p-0 space-x-0 [&>a>div>h3]:p-5 lg:space-x-4 [&>a>div]:w-[300px]">
+                <a href="/recipes/italian">
+                    <div class="border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+                        <img src="/images/italian/italian_cuisine.jpg" alt="Italian" class="h-auto w-auto">
+                        <h3>Italian</h3>
+                    </div>
+                </a>
+                <a href="/recipes/indian">
+                    <div class="border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+                        <img src="/images/indian/indian_cuisine.jpg" alt="Indian" class="h-auto w-auto">
+                        <h3>Indian</h3>
+                    </div>
+                </a>
+                <a href="/recipes/chinese">
+                    <div class="border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+                        <img src="/images/chinese/chinese_cuisine.jpg" alt="Chinese" class="h-auto w-auto">
+                        <h3>Chinese</h3>
+                    </div>
+                </a>
+                <a href="/recipes/mexican">
+                    <div class="border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+                        <img src="/images/mexican/mexican_cuisine.jpg" alt="Mexican" class="h-auto w-auto">
+                        <h3>Mexican</h3>
+                    </div>
 
+                </a>
+            </div>
         </div>
-        </a>
-        <a href="/recipes/german">
-        <div class='border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110'>
-            <img src="/images/german/german_cuisine.jpg" alt="German" class='h-auto w-auto'>
-            <h3>German</h3>
+        <div class="flex flex-row flex-wrap justify-center font-serif mt-4 py-11 md:p-0 space-x-0 [&>a>div>h3]:p-5 lg:space-x-4 [&>a>div]:w-[300px]">
+            <a href="/recipes/american">
+                <div class="border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+                    <img src="/images/american/amercian_cuisine.jpg" alt="American" class="h-auto w-auto">
+                    <h3>American</h3>
+                </div>
+            </a>
+            <a href="/recipes/german">
+                <div class="border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+                    <img src="/images/german/german_cuisine.jpg" alt="German" class="h-auto w-auto">
+                    <h3>German</h3>
+                </div>
+            </a>
+            <a href="/recipes/swiss">
+                <div class="border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+                    <img src="/images/swiss/swiss_cuisine.jpg" alt="Swiss" class="h-auto w-auto">
+                    <h3>Swiss</h3>
+                </div>
+            </a>
+            <a href="/recipes/french">
+                <div class="border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+                    <img src="/images/french/french_cuisine.jpg" alt="French" class="h-auto w-auto">
+                    <h3>French</h3>
+                </div>
+            </a>
         </div>
-        </a>
-        <a href="/recipes/swiss">
-        <div class='border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110'>
-            <img src="/images/swiss/swiss_cuisine.jpg" alt="Swiss" class='h-auto w-auto'>
-            <h3>Swiss</h3>
-        </div>
-        </a>
-        <a href="/recipes/french">
-        <div class='border-2 flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110'>
-            <img src="/images/french/french_cuisine.jpg" alt="French" class='h-auto w-auto'>
-            <h3>French</h3>
-        </div>
-        </a>
+
+
+        <footer id=footer" class=" rounded-lg shadow  dark:bg-gray-800 pt-14">
+
+            <div class=" mx-auto max-w-screen-xl  md:flex md:items-center md:justify-between">
+                        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                            © 2024 <a href="https://github.com/milaasHD" class="hover:underline">milaasHD™</a>
+                        </span>
+            </div>
+        </footer>
     </div>
-
-
-    <footer class=" bg-white rounded-lg shadow  dark:bg-gray-800 pt-14">
-        <div class=" mx-auto max-w-screen-xl  md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2024 <a href="https://github.com/milaasHD" class="hover:underline">milaasHD™</a>
-    </span>
-        </div>
-    </footer>
-
-
 </div>
-<script src='/javascript.js'></script>
+<script src="/javascript.js"></script>
 </body>
 </html>
