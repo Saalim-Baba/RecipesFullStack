@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const recipe_genre = param[param.length-1]
     const recipe_name = param[param.length-2]
     const reveal_button =document.getElementById("options")
+    const plus_sign = document.getElementById("plus")
 
 
     hamburger_button.addEventListener("click", () => {
@@ -18,19 +19,26 @@ document.addEventListener("DOMContentLoaded", function () {
             side_bar.classList.add('h-0');
         }
     });
-    function create_buttons(amount, array){
-        for (let i = 0; i < amount.length; i++) {
+    function create_buttons(array){
+        let options
+        for (let i = 0; i < array.length; i++) {
+            console.log(i)
+            const button = document.createElement('button');
+            const div = document.createElement('div');
+            div.classList.add("reveal-div")
+            options = document.getElementById("buttons_reveal")
+            if (i === array.length-1){
+                div.classList.add('mr-16')
+            }
+            div.classList.add('w-0', 'h-16', 'bg-gray-200', 'rounded-full', 'flex', 'justify-center', 'items-center', 'z-0', 'transition-all', 'duration-300', 'ease-out');
+            const paragraph = document.createElement('p');
+            paragraph.classList.add('opacity-0', 'transition-opacity', 'duration-100', 'z-0', "hidden");
+            paragraph.innerText = array[i]
+            div.appendChild(paragraph);
+            button.appendChild(div);
+            options.appendChild(button);
+
         }
-        const button = document.createElement('button');
-        const div = document.createElement('div');
-        div.classList.add("reveal-div")
-        const options = document.getElementById("buttons_reveal")
-        div.classList.add('w-0', 'h-16', 'mr-16', 'bg-gray-200', 'rounded-full', 'flex', 'justify-center', 'items-center', 'z-0', 'transition-all', 'duration-300', 'ease-out');
-        const paragraph = document.createElement('p');
-        paragraph.classList.add('opacity-0', 'transition-opacity', 'duration-100', 'z-0', "relative");
-        div.appendChild(paragraph);
-        button.appendChild(div);
-        options.appendChild(button);
         return options
     }
     /**
@@ -47,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let recipesContainer;
                 if (recipe_name === "recipes") {
                     recipesContainer = document.getElementById("recipes");
+                    create_buttons(["Add", "Remove"])
                     titles.forEach(title => {
                         if (title.toLowerCase() === recipe_genre){
                             data[title].forEach(recipe => {
@@ -120,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     ingred_title.classList.add("text-xl", "self-start", "ml-10")
                                     descr_title.innerText = "Instructions:"
                                     descr_title.classList.add("text-xl", "self-start", "ml-10")
-                                    create_buttons()
+                                    create_buttons(["Edit"])
                                     ingred_container.appendChild(node_ingredients)
                                     node.appendChild(node_img);
                                     node.appendChild(node_name);
@@ -147,10 +156,17 @@ document.addEventListener("DOMContentLoaded", function () {
             if (div.classList.contains('w-0')) {
                 div.classList.replace('w-0', 'w-16');
                 revealpara[index].classList.replace('opacity-0', 'opacity-100');
+                revealpara[index].classList.remove("hidden")
+                plus_sign.classList.add("hidden")
+
 
             } else {
                 div.classList.replace('w-16', 'w-0');
                 revealpara[index].classList.replace('opacity-100', 'opacity-0');
+                revealpara[index].classList.add("hidden")
+                plus_sign.classList.remove("hidden")
+
+
             }
         });
     });
