@@ -1,19 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const side_bar = document.getElementById("side-bar-menu");
     const hamburger_button = document.getElementById("reveal_side_bar");
-    const toggleCheckbox = document.getElementById('toggle-checkbox');
     const body = document.getElementById("css-body");
-    const nav = document.getElementById("nav");
-    const footer = document.getElementById("footer");
     const loader = document.getElementById("loader")
-    const side_bar_buttons = document.querySelectorAll("button")
-    const real_body = document.body
     const param = (window.location.href).split("/")
     const recipe_genre = param[param.length-1]
     const recipe_name = param[param.length-2]
     const reveal_button =document.getElementById("options")
-    const left_reveal_button = document.getElementById("left-reveal")
-    const right_reveal_button = document.getElementById("right-reveal")
+
 
     hamburger_button.addEventListener("click", () => {
         if (side_bar.classList.contains('h-0')) {
@@ -24,7 +18,21 @@ document.addEventListener("DOMContentLoaded", function () {
             side_bar.classList.add('h-0');
         }
     });
-    toggleCheckbox.addEventListener('change', dark_mode);
+    function create_buttons(amount, array){
+        for (let i = 0; i < amount.length; i++) {
+        }
+        const button = document.createElement('button');
+        const div = document.createElement('div');
+        div.classList.add("reveal-div")
+        const options = document.getElementById("buttons_reveal")
+        div.classList.add('w-0', 'h-16', 'mr-16', 'bg-gray-200', 'rounded-full', 'flex', 'justify-center', 'items-center', 'z-0', 'transition-all', 'duration-300', 'ease-out');
+        const paragraph = document.createElement('p');
+        paragraph.classList.add('opacity-0', 'transition-opacity', 'duration-100', 'z-0', "relative");
+        div.appendChild(paragraph);
+        button.appendChild(div);
+        options.appendChild(button);
+        return options
+    }
     /**
      This is for the display of the recipes in the overview of all recipes inside a genre and if the URL has
      the name of the recipe in the domain it'll create a node only for the specific recipe
@@ -112,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     ingred_title.classList.add("text-xl", "self-start", "ml-10")
                                     descr_title.innerText = "Instructions:"
                                     descr_title.classList.add("text-xl", "self-start", "ml-10")
+                                    create_buttons()
                                     ingred_container.appendChild(node_ingredients)
                                     node.appendChild(node_img);
                                     node.appendChild(node_name);
@@ -120,72 +129,32 @@ document.addEventListener("DOMContentLoaded", function () {
                                     node.appendChild(descr_title)
                                     node.appendChild(node_description);
                                     recipesContainer.appendChild(node);
-
                                 }
                             })
                         }
                     })
                 }}).catch(error => console.error('Error fetching recipes:', error));
 
-    function dark_mode(){
-        const borders = document.querySelectorAll(".border-4");
-        const buttons = document.querySelectorAll(".bg-gray-200");
-        if (toggleCheckbox.checked) {
-            localStorage.setItem('checkboxState', toggleCheckbox.checked);
-            document.body.style.backgroundColor = '#383838';
-            document.body.style.color = '#ffffff';
-            real_body.style.backgroundColor = '#383838';
-            nav.classList.replace("bg-gray-100", "bg-custom-gray");
-            hamburger_button.classList.replace("hover:bg-gray-200", "hover:bg-zinc-700");
-            side_bar.classList.replace("bg-gray-100", "bg-custom-gray");
-            buttons.forEach(button => {
-                button.classList.replace("border-gray-200", "border-custom-gray");
-            });
-            borders.forEach(border => {
-                border.classList.add("border-custom-gray");
-            });
-        } else {
-            localStorage.removeItem('checkboxState');
-            borders.forEach(border => {
-                border.classList.remove("border-custom-gray");
-            });
-            buttons.forEach(button => {
-                button.classList.replace("border-custom-gray", "border-gray-200");
-            });
-            real_body.style.backgroundColor = '#ffffff';
-            hamburger_button.classList.replace("hover:bg-zinc-700", "hover:bg-gray-200");
-            side_bar.classList.replace("bg-custom-gray", "bg-gray-100");
-            document.body.style.backgroundColor = '#ffffff';
-            document.body.style.color = '#000000';
-            nav.classList.replace("bg-custom-gray", "bg-gray-100");
-            footer.style.backgroundColor = '#ffffff';
-        }
-    }
     window.addEventListener('load', function() {
-        if (toggleCheckbox.checked){
-            dark_mode()
-        }
-        if (localStorage.getItem('checkboxState') !== null){
-            toggleCheckbox.checked = true
-            dark_mode()
-        }
         loader.style.display = "none"
         body.style.display = "inline"
     });
 
-    reveal_button.addEventListener("click", function() {
-        if (left_reveal_button.classList.contains('w-0')) {
-            left_reveal_button.classList.remove('w-0');
-            right_reveal_button.classList.remove('w-0');
-            right_reveal_button.classList.add('w-16', "[&>p]:opacity-100");
-            left_reveal_button.classList.add('w-16',"[&>p]:opacity-100");
-        } else {
-            right_reveal_button.classList.remove('w-16', "[&>p]:opacity-100");
-            left_reveal_button.classList.remove('w-16', "[&>p]:opacity-100");
-            left_reveal_button.classList.add('w-0');
-            right_reveal_button.classList.add('w-0');
-        }
+    reveal_button.addEventListener('click', function() {
+        const revealDivs = document.querySelectorAll('.reveal-div');
+        const revealpara = document.querySelectorAll('.reveal-div>p');
+        revealDivs.forEach((div, index) => {
+            if (div.classList.contains('w-0')) {
+                div.classList.replace('w-0', 'w-16');
+                revealpara[index].classList.replace('opacity-0', 'opacity-100');
+
+            } else {
+                div.classList.replace('w-16', 'w-0');
+                revealpara[index].classList.replace('opacity-100', 'opacity-0');
+            }
+        });
     });
+
 
 
 });
