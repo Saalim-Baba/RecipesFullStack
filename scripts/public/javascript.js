@@ -10,8 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const reveal_button =document.getElementById("options")
     const plus_sign = document.getElementById("plus")
     const recipesContainer = document.getElementById("recipes");
-
-
+    const formContainer = document.getElementById("form")
     hamburger_button.addEventListener("click", () => {
         if (side_bar.classList.contains('h-0')) {
             side_bar.classList.remove('h-0');
@@ -148,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body.style.display = "inline"
         side_bar_buttons.forEach(button =>
         button.classList.add("hover:bg-gray-200"))
+
     });
 
     reveal_button.addEventListener('click', function() {
@@ -166,5 +166,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 plus_sign.classList.toggle('opacity-0');
             }
         });
+        const edit_button = document.getElementById("button_1")
+        const add_button = document.getElementById("button_2")
+        const delete_button = document.getElementById("button_3")
+
+        if (edit_button){
+            edit_button.addEventListener("click", function (){
+                recipesContainer.style.display = "none"
+                formContainer.style.display = "inline"
+            })
+        }
+        add_button.addEventListener("click", function (){
+            recipesContainer.style.display = "none"
+            formContainer.style.display = "inline"
+
+        })
+        delete_button.addEventListener("click", function (){
+            recipesContainer.style.display = "none"
+        })
     });
+
+
+
 });
