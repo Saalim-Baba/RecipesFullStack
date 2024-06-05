@@ -1,25 +1,64 @@
 document.addEventListener("DOMContentLoaded", function () {
     const side_bar = document.getElementById("side-bar-menu");
     const hamburger_button = document.getElementById("reveal_side_bar");
-    const side_bar_buttons = document.querySelectorAll("#side-bar-menu>button")
+    const side_bar_buttons = document.querySelectorAll("#side-bar-menu>a");
     const body = document.getElementById("css-body");
     const loader = document.getElementById("loader")
     const param = (window.location.href).split("/")
     const recipe_genre = param[param.length-1]
     const recipe_name = param[param.length-2]
     const reveal_button =document.getElementById("options")
-    const plus_sign = document.getElementById("plus")
+    const pointer = document.getElementById("pointer")
     const recipesContainer = document.getElementById("recipes");
     const formContainer = document.getElementById("form")
-    hamburger_button.addEventListener("click", () => {
-        if (side_bar.classList.contains('h-0')) {
-            side_bar.classList.remove('h-0');
-            side_bar.classList.add('h-56');
-        } else {
-            side_bar.classList.remove('h-56');
-            side_bar.classList.add('h-0');
-        }
-    });
+    const form_name = document.getElementById("form_name")
+    const form_ingredients = document.getElementById("form_ingredients")
+    const form_instructions = document.getElementById("form_instructions")
+    const form_title = document.getElementById("form_title")
+    const form_img = document.getElementById("form_image")
+
+    /**
+     FUNCTIONS are declared here till fetch
+     */
+    function showcase_buttons() {
+        const revealDivs = document.querySelectorAll('.reveal-div');
+        const revealpara = document.querySelectorAll('.reveal-div>p');
+        revealDivs.forEach((div, index) => {
+            if (div.classList.contains('w-0')) {
+                div.classList.replace('w-0', 'w-16');
+                div.classList.add("border-8" ,"font-bold")
+                revealpara[index].classList.replace('opacity-0', 'opacity-100');
+                revealpara[index].classList.remove("hidden")
+                pointer.classList.add('-rotate-90');
+            } else {
+                div.classList.replace('w-16', 'w-0');
+                div.classList.remove("border-8", "font-bold")
+                revealpara[index].classList.replace('opacity-100', 'opacity-0');
+                revealpara[index].classList.add("hidden")
+                pointer.classList.remove('-rotate-90');
+            }
+        })}
+    function add_ingredient(event) {
+        event.preventDefault();
+        const input = document.getElementById('form_ingredients');
+        const ingredient = input.value.trim();
+        if (ingredient) {
+            const ingredientList = document.getElementById('form_ingredients_list');
+            const ingredientItem = document.createElement('div');
+            ingredientItem.className = 'bg-gray-100 border border-gray-300 rounded-lg px-3 py-2';
+            ingredientItem.textContent = ingredient;
+            ingredientList.appendChild(ingredientItem);
+            input.value = '';
+        }}
+    function showcase_sidebar(){
+        side_bar_buttons.forEach(button => {
+            if (button.classList.contains('h-0')) {
+                button.classList.replace('h-0', 'h-16');
+            } else {
+                button.classList.replace('h-16', 'h-0');
+            }
+        });
+    }
     function create_buttons(array){
         let options
         for (let i = 0; i < array.length; i++) {
@@ -31,10 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (i === array.length-1){
                 div.classList.add('mr-16')
             }
-            div.classList.add('w-0', 'h-16', 'bg-gray-200', 'rounded-full', 'flex', 'justify-center', 'items-center', 'z-0', 'transition-all', 'duration-300', 'ease-out');
+            div.classList.add('w-0', 'h-16', 'bg-gray-300', 'rounded-full', 'flex', 'justify-center', 'items-center', 'z-0', 'transition-all', 'duration-300', 'ease-out');
             div.id = `button_${i + array.length}`
             const paragraph = document.createElement('p');
-            paragraph.classList.add('opacity-0', 'transition-opacity', 'duration-100', 'z-0', "hidden");
+            paragraph.classList.add("text-xs",'opacity-0', 'transition-opacity', 'duration-100', 'z-0', "hidden");
             paragraph.innerText = array[i]
             div.appendChild(paragraph);
             button.appendChild(div);
@@ -43,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return options
     }
     /**
+     FETCH
      This is for the display of the recipes in the overview of all recipes inside a genre and if the URL has
      the name of the recipe in the domain it'll create a node only for the specific recipe
      Note: The variable name is not chosen smartly, that's why it's reassigned in the else statement for better
@@ -78,6 +118,19 @@ document.addEventListener("DOMContentLoaded", function () {
                                 node.appendChild(node_name);
                                 link.appendChild(node)
                                 recipesContainer.appendChild(link);
+                                const add_button = document.getElementById("button_2")
+                                const delete_button = document.getElementById("button_3")
+                                if (add_button){
+                                    add_button.addEventListener("click", function (){
+                                        recipesContainer.style.display = "none"
+                                        formContainer.classList.remove("hidden")
+                                        form_title.innerText = "New Recipe"
+                                        formContainer.classList.replace('opacity-0', 'opacity-100');
+                                    })
+                                    delete_button.addEventListener("click", function (){
+                                        recipesContainer.style.display = "none"
+                                    })
+                                }
                             })
                         }
                     });
@@ -112,7 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                     node_img.src = `/images/${recipe_genre}/${recipe.name}.jpg`;
                                     node_img.classList.add("mt-10", "border-4")
                                     node_name.innerText = recipe.name
-                                    node_img.width = 350
+                                    document.title = recipe.name
+                                        node_img.width = 350
                                     recipe.ingredients.forEach(ingredient => {
                                         const item = document.createElement("li");
                                         item.innerText = ingredient;
@@ -136,56 +190,84 @@ document.addEventListener("DOMContentLoaded", function () {
                                     node.appendChild(descr_title)
                                     node.appendChild(node_description);
                                     recipesContainer.appendChild(node);
+                                    const edit_button = document.getElementById("button_1")
+                                    if (edit_button){
+                                        edit_button.addEventListener("click", function (){
+                                            recipesContainer.style.display = "none"
+                                            formContainer.classList.remove("hidden")
+                                            form_title.innerText = "Edit Recipe"
+                                            form_name.value = recipe.name
+                                            form_instructions.value = recipe.instructions
+                                            for (let i=0; i<(recipe.ingredients).length; i++){
+                                                form_ingredients.value = (recipe.ingredients)[i]
+                                                let event = new KeyboardEvent('keydown', {
+                                                    bubbles: true,
+                                                    cancelable: true,
+                                                    key: 'Enter',
+                                                    code: 'Enter',
+                                                    keyCode: 13
+                                                });
+                                                add_ingredient(event);
+                                            }
+                                            fetch(node_img.src)
+                                                .then(response => response.blob())
+                                                .then(blob => {
+                                                    const file = new File([blob], `${recipe.name}.jpg`, { type: 'image/jpeg' });
+                                                    const dataTransfer = new DataTransfer();
+                                                    dataTransfer.items.add(file);
+                                                    form_img.files = dataTransfer.files;})
+                                                formContainer.classList.replace('opacity-0', 'opacity-100');
+                                        })
+                                    }
                                 }
                             })
                         }
                     })
                 }}).catch(error => console.error('Error fetching recipes:', error));
 
+
+    /**
+     addEventListener are declared from here
+     */
+    hamburger_button.addEventListener("click", showcase_sidebar)
+    if (reveal_button){
+        reveal_button.addEventListener('click', showcase_buttons)
+    }
+
+
     window.addEventListener('load', function() {
         loader.style.display = "none"
         body.style.display = "inline"
         side_bar_buttons.forEach(button =>
-        button.classList.add("hover:bg-gray-200"))
+        button.classList.add("w-52","hover:bg-gray-200"))
 
     });
-
-    reveal_button.addEventListener('click', function() {
-        const revealDivs = document.querySelectorAll('.reveal-div');
-        const revealpara = document.querySelectorAll('.reveal-div>p');
-        revealDivs.forEach((div, index) => {
-            if (div.classList.contains('w-0')) {
-                div.classList.replace('w-0', 'w-16');
-                revealpara[index].classList.replace('opacity-0', 'opacity-100');
-                revealpara[index].classList.remove("hidden")
-                plus_sign.classList.toggle('opacity-0');
-            } else {
-                div.classList.replace('w-16', 'w-0');
-                revealpara[index].classList.replace('opacity-100', 'opacity-0');
-                revealpara[index].classList.add("hidden")
-                plus_sign.classList.toggle('opacity-0');
+    document.addEventListener("click", function (event){
+        if (!(hamburger_button.contains(event.target) || side_bar.contains(event.target)||reveal_button.contains(event.target))){
+            if (pointer.classList.contains("-rotate-90")){
+                showcase_buttons()
             }
-        });
-        const edit_button = document.getElementById("button_1")
-        const add_button = document.getElementById("button_2")
-        const delete_button = document.getElementById("button_3")
-
-        if (edit_button){
-            edit_button.addEventListener("click", function (){
-                recipesContainer.style.display = "none"
-                formContainer.style.display = "inline"
+            side_bar_buttons.forEach(button =>{
+            if (button.classList.contains("h-16")){
+                showcase_sidebar()
+            }
             })
         }
-        add_button.addEventListener("click", function (){
-            recipesContainer.style.display = "none"
-            formContainer.style.display = "inline"
 
-        })
-        delete_button.addEventListener("click", function (){
-            recipesContainer.style.display = "none"
-        })
+    });
+    const input = document.getElementById('form_ingredients');
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            add_ingredient(event);
+        }
     });
 
 
+})
 
-});
+
+
+
+
+
+

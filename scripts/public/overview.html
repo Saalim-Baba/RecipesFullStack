@@ -6,16 +6,19 @@
     <link rel="stylesheet" href="/css/output.css">
     <title>Overview</title>
 </head>
-<div class="flex justify-center items-center text-center relative">
-    <div id="loader" class="animate-pulse flex flex-col items-center gap-4 w-60 mx-auto my-0 min-h-screen justify-center">
-        <div>
-            <div class="w-48 h-6 bg-slate-400 rounded-md"></div>
-            <div class="w-28 h-4 bg-slate-400 mx-auto mt-3 rounded-md"></div>
-        </div>
-        <div class="h-7 bg-slate-400 w-full rounded-md"></div>
-        <div class="h-7 bg-slate-400 w-full rounded-md"></div>
-        <div class="h-7 bg-slate-400 w-full rounded-md"></div>
-        <div class="h-7 bg-slate-400 w-1/2 rounded-md"></div>
+<div id='loader' class="flex justify-center items-center text-center relative ">
+    <div aria-label="Loading..." role="status" class="flex flex-col items-center space-y-4 my-64">
+        <svg class="h-32 w-32 animate-spin stroke-gray-500" viewBox="0 0 256 256">
+            <line x1="128" y1="32" x2="128" y2="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+            <line x1="195.9" y1="60.1" x2="173.3" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+            <line x1="224" y1="128" x2="192" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+            <line x1="195.9" y1="195.9" x2="173.3" y2="173.3" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+            <line x1="128" y1="224" x2="128" y2="192" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+            <line x1="60.1" y1="195.9" x2="82.7" y2="173.3" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+            <line x1="32" y1="128" x2="64" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+            <line x1="60.1" y1="60.1" x2="82.7" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+        </svg>
+        <span class="text-2xl font-serif text-gray-500 mt-32">Loading...</span>
     </div>
 </div>
 <body class="overflow-x-hidden">
@@ -33,11 +36,12 @@
             </a>
         </div>
     </nav>
-    <div id="side-bar-menu" class="z-50 absolute [&>button>em]:italic transition-all duration-300 ease-in-out top-[6.5rem] left-0 flex flex-col bg-gray-100 h-0 w-52  shadow-right overflow-hidden items-center justify-evenly">
-        <button><a href="/recipes/home">Home</a></button>
-        <button><em>Über mich</em></button>
-        <button><a href="https://github.com/milaasHD">GitHub</a></button>
+    <div id="side-bar-menu" class="z-50 absolute top-[6.5rem] left-0 flex flex-col bg-gray-100 w-52 shadow-lg overflow-hidden items-center justify-evenly transition-all duration-300 ease-in-out">
+        <a href="/recipes/home" class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">Home</a>
+        <a class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">Über mich</a>
+        <a href="https://github.com/milaasHD" class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">GitHub</a>
     </div>
+
     <div>
         <div id="food" class="w-screen mt-14">
             <div class="flex flex-row flex-wrap font-serif justify-center py-11 md:p-0 space-x-0 [&>a>div>h3]:p-5 lg:space-x-4 [&>a>div]:w-[300px]">
