@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const side_bar = document.getElementById("side-bar-menu");
     const hamburger_button = document.getElementById("reveal_side_bar");
+    const side_bar_buttons = document.querySelectorAll("#side-bar-menu>button")
     const body = document.getElementById("css-body");
     const loader = document.getElementById("loader")
     const param = (window.location.href).split("/")
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const recipe_name = param[param.length-2]
     const reveal_button =document.getElementById("options")
     const plus_sign = document.getElementById("plus")
+    const recipesContainer = document.getElementById("recipes");
 
 
     hamburger_button.addEventListener("click", () => {
@@ -31,13 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 div.classList.add('mr-16')
             }
             div.classList.add('w-0', 'h-16', 'bg-gray-200', 'rounded-full', 'flex', 'justify-center', 'items-center', 'z-0', 'transition-all', 'duration-300', 'ease-out');
+            div.id = `button_${i + array.length}`
             const paragraph = document.createElement('p');
             paragraph.classList.add('opacity-0', 'transition-opacity', 'duration-100', 'z-0', "hidden");
             paragraph.innerText = array[i]
             div.appendChild(paragraph);
             button.appendChild(div);
             options.appendChild(button);
-
         }
         return options
     }
@@ -52,9 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 console.log(data);
                 const titles = Object.keys(data);
-                let recipesContainer;
                 if (recipe_name === "recipes") {
-                    recipesContainer = document.getElementById("recipes");
                     create_buttons(["Add", "Remove"])
                     titles.forEach(title => {
                         if (title.toLowerCase() === recipe_genre){
@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
                      */
                     const recipe_genre = param[param.length-2]
                     const recipe_name = param[param.length-1]
-                    recipesContainer = document.getElementById("recipe");
                     titles.forEach(title => {
                         if (title.toLowerCase() === recipe_genre) {
                             data[title].forEach(recipe => {
@@ -147,6 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('load', function() {
         loader.style.display = "none"
         body.style.display = "inline"
+        side_bar_buttons.forEach(button =>
+        button.classList.add("hover:bg-gray-200"))
     });
 
     reveal_button.addEventListener('click', function() {
@@ -157,20 +158,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 div.classList.replace('w-0', 'w-16');
                 revealpara[index].classList.replace('opacity-0', 'opacity-100');
                 revealpara[index].classList.remove("hidden")
-                plus_sign.classList.add("hidden")
-
-
+                plus_sign.classList.toggle('opacity-0');
             } else {
                 div.classList.replace('w-16', 'w-0');
                 revealpara[index].classList.replace('opacity-100', 'opacity-0');
                 revealpara[index].classList.add("hidden")
-                plus_sign.classList.remove("hidden")
-
-
+                plus_sign.classList.toggle('opacity-0');
             }
         });
     });
-
-
-
 });
