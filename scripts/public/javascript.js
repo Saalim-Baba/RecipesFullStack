@@ -44,10 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const ingredient = input.value.trim();
         if (ingredient) {
             const ingredientList = document.getElementById('form_ingredients_list');
-            const ingredientItem = document.createElement('div');
-            ingredientItem.className = 'bg-gray-100 border border-gray-300 rounded-lg px-3 py-2';
+            const ingredient_container = document.createElement('div');
+            const ingredientItem = document.createElement('p');
+            const remove_item = document.createElement('p');
+            ingredient_container.className = 'flex bg-gray-100 border border-gray-300 rounded-lg px-3 py-2';
+            remove_item.classList.add("ml-auto", "remove_item")
+            remove_item.textContent = "x"
             ingredientItem.textContent = ingredient;
-            ingredientList.appendChild(ingredientItem);
+            ingredient_container.appendChild(ingredientItem)
+            ingredient_container.appendChild(remove_item)
+            ingredientList.appendChild(ingredient_container);
             input.value = '';
         }}
     function showcase_sidebar(){
