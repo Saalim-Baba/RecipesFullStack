@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const form_instructions = document.getElementById("form_instructions")
     const form_title = document.getElementById("form_title")
     const form_img = document.getElementById("form_image")
-
+    const cancel_button = document.getElementById("form_cancel")
+    const ingredients = []
     /**
      FUNCTIONS are declared here till fetch
      */
@@ -46,15 +47,19 @@ document.addEventListener("DOMContentLoaded", function () {
             const ingredientList = document.getElementById('form_ingredients_list');
             const ingredient_container = document.createElement('div');
             const ingredientItem = document.createElement('p');
-            const remove_item = document.createElement('p');
+            const remove_item = document.createElement('button');
             ingredient_container.className = 'flex bg-gray-100 border border-gray-300 rounded-lg px-3 py-2';
             remove_item.classList.add("ml-auto", "remove_item")
             remove_item.textContent = "x"
+            remove_item.setAttribute("type", "button")
             ingredientItem.textContent = ingredient;
             ingredient_container.appendChild(ingredientItem)
             ingredient_container.appendChild(remove_item)
             ingredientList.appendChild(ingredient_container);
+            ingredients.push(ingredient)
             input.value = '';
+            remove_item.addEventListener("click", function (){
+                delete_ingredients(remove_item)})
         }}
     function showcase_sidebar(){
         side_bar_buttons.forEach(button => {
@@ -87,6 +92,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return options
     }
+
+    function delete_ingredients(remover){
+        (remover.parentElement).remove()
+        let ingredient = (remover.previousSibling).innerHTML
+        let index = ingredients.indexOf(ingredient);
+        if (index !== -1) {
+            ingredients.splice(index, 1);
+        }
+        console.log(ingredients)
+    }
+
     /**
      FETCH
      This is for the display of the recipes in the overview of all recipes inside a genre and if the URL has
@@ -128,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 const delete_button = document.getElementById("button_3")
                                 if (add_button){
                                     add_button.addEventListener("click", function (){
-                                        recipesContainer.style.display = "none"
+                                        recipesContainer.classList.add("hidden")
                                         formContainer.classList.remove("hidden")
                                         form_title.innerText = "New Recipe"
                                         formContainer.classList.replace('opacity-0', 'opacity-100');
@@ -240,7 +256,6 @@ document.addEventListener("DOMContentLoaded", function () {
         reveal_button.addEventListener('click', showcase_buttons)
     }
 
-
     window.addEventListener('load', function() {
         loader.style.display = "none"
         body.style.display = "inline"
@@ -268,12 +283,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
+    cancel_button.addEventListener("click", function (){
+        formContainer.classList.replace('opacity-100', 'opacity-0');
+        recipesContainer.classList.remove("hidden")
+        formContainer.classList.add("hidden")
+    })
 })
-
-
-
-
-
-
-
