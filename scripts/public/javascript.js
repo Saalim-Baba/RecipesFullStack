@@ -120,26 +120,36 @@ document.addEventListener("DOMContentLoaded", function () {
                     titles.forEach(title => {
                         if (title.toLowerCase() === recipe_genre){
                             data[title].forEach(recipe => {
+                                const node_remover = document.createElement("div")
                                 const node = document.createElement("div");
                                 const node_img = document.createElement("img");
                                 const node_name = document.createElement("h3");
                                 const link = document.createElement("a");
-                                node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110");
-                                recipesContainer.classList.add(
-                                    "flex", "flex-row", "flex-wrap", "font-serif", "justify-start",
-                                    "py-11", "md:p-0", "[&>a>div>h3]:p-5", "[&>a>div]:w-[220px]",
-                                    "gap-y-5", "gap-x-5", "[&>a>div:not(:last-child)]:lg:space-x-4", "mt-11",
-                                    "ml-14"
-                                );
+                                node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110", "recipe_container");
+                                recipesContainer.classList.add("flex", "flex-row", "flex-wrap", "font-serif", "justify-start", "py-11", "md:p-0", "[&>div>a>div>h3]:p-5", "[&>div>a>div]:w-[220px]", "gap-y-5", "gap-x-5", "[&>div>a>div:not(:last-child)]:lg:space-x-4", "mt-11", "ml-14");
                                 node_img.src = `../images/${recipe_genre}/${recipe.name}.jpg`;
-                                node_img.classList.add("object-contain","h-auto", "w-auto", draggable="false");
-                                node_name.innerText = recipe.name
+                                node_img.classList.add("object-contain", "h-auto", "w-auto", "draggable", "false");
+                                node_name.innerText = recipe.name;
                                 const formattedname = (recipe.name).replace(/\s+/g, '_');
-                                link.href = `/recipes/${recipe_genre}/${formattedname}`
+                                const remover = document.createElement("button");
+                                remover.innerText = "x";
+                                remover.classList.add("remover", "hidden", "pointer-events-auto", "border", "rounded-full", "bg-gray-300", "px-2.5", "absolute", "pb-0.5", "ml-48", "z-50", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-125");
+                                remover.addEventListener('click', (event) => {
+                                    /**
+                                     Because this is kind of confusing ill elaborate here
+                                     The remove button on the corner of the recipe card is on the same hierachy as the div
+                                     You go into that sibling and to the first child which is the div, then you go to the firstChild which is the
+                                     image, but I need the name of the recipe so I go to the nextSibling which is the h3 that contains the name
+                                     */
+                                    console.log((remover.nextSibling.firstChild.firstChild.nextSibling).textContent)
+                                });
+                                node_remover.appendChild(remover)
                                 node.appendChild(node_img);
                                 node.appendChild(node_name);
-                                link.appendChild(node)
-                                recipesContainer.appendChild(link);
+                                link.href = `/recipes/${recipe_genre}/${formattedname}`;
+                                link.appendChild(node);
+                                node_remover.appendChild(link);
+                                recipesContainer.appendChild(node_remover);
                                 const add_button = document.getElementById("button_2")
                                 const delete_button = document.getElementById("button_3")
                                 if (add_button){
@@ -150,7 +160,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                         formContainer.classList.replace('opacity-0', 'opacity-100');
                                     })
                                     delete_button.addEventListener("click", function (){
-                                        recipesContainer.style.display = "none"
+                                        const recipes_divs = document.querySelectorAll(".recipe_container")
+                                        const removers = document.querySelectorAll(".remover")
+                                        recipes_divs.forEach(recipe => {
+                                            recipe.classList.remove("hover:scale-110")
+                                            recipe.classList.add("animate-wiggle")
+                                        })
+                                        removers.forEach(remover =>{
+                                            remover.classList.remove("hidden")
+                                        })
                                     })
                                 }
                             })

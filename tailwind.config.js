@@ -16,8 +16,22 @@ module.exports = {
             },
             colors: {
                 'custom-gray': '#252525'
-            }
+            },
+            keyframes: {
+                wiggle: {
+                    '0%, 100%': { transform: 'rotate(0deg)' },
+                    '10%, 90%': { transform: 'rotate(0.5deg)' },
+                    '20%, 80%': { transform: 'rotate(-0.5deg)' },
+                    '30%, 70%': { transform: 'rotate(0.4deg)' },
+                    '40%, 60%': { transform: 'rotate(-0.4deg)' },
+                    '50%': { transform: 'rotate(0deg)' }
+                }
+            },
+            animation: {
+                wiggle: 'wiggle 4s ease-in-out infinite',
+            },
         },
     },
+    variants: {},
     plugins: [],
 }
