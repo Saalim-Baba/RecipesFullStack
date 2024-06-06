@@ -21,7 +21,16 @@ router.get("/:type/:recipe", (request, response) => {
     response.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+router.delete("/:type", (request, response) =>{
+    const type = request.params.type
+    Object.keys(recipes).forEach(genre =>{
+        if(genre.toLowerCase() === type.toLowerCase()){
+            response.json(genre)
+        }
+    }
+    )
 
+})
 
 module.exports = router;
 

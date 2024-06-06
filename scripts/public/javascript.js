@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const form_title = document.getElementById("form_title")
     const form_img = document.getElementById("form_image")
     const cancel_button = document.getElementById("form_cancel")
+    const modal_dialoge = document.getElementById("delete_modal")
     const ingredients = []
+
     /**
      FUNCTIONS are declared here till fetch
      */
@@ -103,6 +105,11 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(ingredients)
     }
 
+    function hide_removers(){
+        const removers = document.querySelectorAll(".remover")
+        removers.forEach( remover => remover.classList.add("hidden"))
+    }
+
     /**
      FETCH
      This is for the display of the recipes in the overview of all recipes inside a genre and if the URL has
@@ -141,6 +148,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                      You go into that sibling and to the first child which is the div, then you go to the firstChild which is the
                                      image, but I need the name of the recipe so I go to the nextSibling which is the h3 that contains the name
                                      */
+                                    hide_removers()
+                                    modal_dialoge.classList.remove("hidden")
                                     console.log((remover.nextSibling.firstChild.firstChild.nextSibling).textContent)
                                 });
                                 node_remover.appendChild(remover)
