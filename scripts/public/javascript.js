@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const form_img = document.getElementById("form_image")
     const cancel_button = document.getElementById("form_cancel")
     const modal_dialoge = document.getElementById("delete_modal")
+    const close_modal = document.querySelectorAll(".close_modal")
     const ingredients = []
+
 
     /**
      FUNCTIONS are declared here till fetch
@@ -161,6 +163,14 @@ document.addEventListener("DOMContentLoaded", function () {
                                 recipesContainer.appendChild(node_remover);
                                 const add_button = document.getElementById("button_2")
                                 const delete_button = document.getElementById("button_3")
+                                const recipes_divs = document.querySelectorAll(".recipe_container")
+                                close_modal.forEach(close => close.addEventListener("click", function(){
+                                    modal_dialoge.classList.add("hidden")
+                                    recipes_divs.forEach(recipe => {
+                                        recipe.classList.remove("animate-wiggle")
+                                        recipe.classList.add("hover:scale-110")
+                                    })
+                                }))
                                 if (add_button){
                                     add_button.addEventListener("click", function (){
                                         recipesContainer.classList.add("hidden")
@@ -168,8 +178,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                         form_title.innerText = "New Recipe"
                                         formContainer.classList.replace('opacity-0', 'opacity-100');
                                     })
+
                                     delete_button.addEventListener("click", function (){
-                                        const recipes_divs = document.querySelectorAll(".recipe_container")
                                         const removers = document.querySelectorAll(".remover")
                                         recipes_divs.forEach(recipe => {
                                             recipe.classList.remove("hover:scale-110")
@@ -315,4 +325,5 @@ document.addEventListener("DOMContentLoaded", function () {
         recipesContainer.classList.remove("hidden")
         formContainer.classList.add("hidden")
     })
+
 })
