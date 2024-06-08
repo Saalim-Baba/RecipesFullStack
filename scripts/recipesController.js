@@ -32,9 +32,8 @@ router.get("/:type/:recipe", (request, response) => {
     response.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-router.delete("/:type/:recipe", (request, response) =>{
+router.delete("/:type", (request, response) =>{
     const type = request.params.type
-    const recipe = request.params.recipe
     let recipe_genre;
     Object.keys(recipes).forEach(genre =>{
         if(genre.toLowerCase() === type.toLowerCase()){
@@ -42,12 +41,7 @@ router.delete("/:type/:recipe", (request, response) =>{
         }
     }
     )
-    console.log(recipe)
-    recipe_genre.forEach(i => {
-        if (i.name == recipe){
-            response.json(i.name)
-        }
-    })
+
 })
 
 const upload = multer({ storage: storage });

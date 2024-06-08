@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const cancel_button = document.getElementById("form_cancel")
     const modal_dialoge = document.getElementById("delete_modal")
     const close_modal = document.querySelectorAll(".close_modal")
+    const formEl = document.querySelector(".form");
+    const ingredientList = document.getElementById('form_ingredients_list');
     const ingredients = []
 
 
@@ -49,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const input = document.getElementById('form_ingredients');
         const ingredient = input.value.trim();
         if (ingredient) {
-            const ingredientList = document.getElementById('form_ingredients_list');
             const ingredient_container = document.createElement('div');
             const ingredientItem = document.createElement('p');
             const remove_item = document.createElement('button');
@@ -144,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 const remover = document.createElement("button");
                                 remover.innerText = "x";
                                 remover.classList.add("remover", "hidden", "pointer-events-auto", "border", "rounded-full", "bg-gray-300", "px-2.5", "absolute", "pb-0.5", "ml-48", "z-50", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-125");
-                                remover.addEventListener('click', (event) => {
+                                remover.addEventListener('click', () => {
                                     /**
                                      Because this is kind of confusing ill elaborate here
                                      The remove button on the corner of the recipe card is on the same hierachy as the div
@@ -177,6 +178,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                         recipesContainer.classList.add("hidden")
                                         formContainer.classList.remove("hidden")
                                         form_title.innerText = "New Recipe"
+                                        formEl.reset()
+                                        ingredients.length = 0
+                                        ingredientList.innerHTML = ''
                                         formContainer.classList.replace('opacity-0', 'opacity-100');
                                     })
 
@@ -190,6 +194,20 @@ document.addEventListener("DOMContentLoaded", function () {
                                             remover.classList.remove("hidden")
                                         })
                                     })
+                                    if (add_button){
+                                        formEl.addEventListener("submit", event => {
+                                            event.preventDefault();
+                                            const formData = new FormData(formEl);
+                                            formData.set("form_ingredients", ingredients)
+
+                                            fetch(`${current_url}`, {
+                                                method: 'POST',
+                                                body: formData
+                                            }).then(res => res.json())
+                                                .then(data => console.log(data))
+                                            window.location.reload()
+                                        });
+                                    }
                                 }
                             })
                         }
@@ -327,18 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formContainer.classList.add("hidden")
     })
 
-    const formEl = document.querySelector(".form");
-    formEl.addEventListener("submit", event => {
-        event.preventDefault();
-        const formData = new FormData(formEl);
-        formData.set("form_ingredients", ingredients)
 
-        fetch(`${current_url}`, {
-            method: 'POST',
-            body: formData
-        }).then(res => res.json())
-            .then(data => console.log(data))
-        window.location.reload()
-    });
+
 
 })
