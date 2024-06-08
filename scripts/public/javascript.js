@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110", "recipe_container");
                                 recipesContainer.classList.add("flex", "flex-row", "flex-wrap", "font-serif", "justify-start", "py-11", "md:p-0", "[&>div>a>div>h3]:p-5", "[&>div>a>div]:w-[220px]", "gap-y-5", "gap-x-5", "[&>div>a>div:not(:last-child)]:lg:space-x-4", "mt-11", "ml-14");
                                 node_img.src = `../images/${recipe_genre}/${recipe.name}.jpg`;
-                                node_img.classList.add("object-contain", "h-auto", "w-auto", "draggable", "false");
+                                node_img.classList.add("object-contain", "h-auto", "w-auto", "draggable", "false", "w-[216px]", "h-[216px]");
                                 node_name.innerText = recipe.name;
                                 const formattedname = (recipe.name).replace(/\s+/g, '_');
                                 const remover = document.createElement("button");
@@ -331,16 +331,14 @@ document.addEventListener("DOMContentLoaded", function () {
     formEl.addEventListener("submit", event => {
         event.preventDefault();
         const formData = new FormData(formEl);
-        formData.append("form_ingredients", ingredients);
-        for (let [key, value] of formData.entries()) {
-            console.log(`${key}:`, value);
-        }
-        fetch(current_url, {
+        formData.set("form_ingredients", ingredients)
+
+        fetch(`${current_url}`, {
             method: 'POST',
             body: formData
         }).then(res => res.json())
-            .then(data => console.log('Response:', data))
-            .catch(error => console.error('Error:', error));
+            .then(data => console.log(data))
+        window.location.reload()
     });
 
 })
