@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const side_bar_buttons = document.querySelectorAll("#side-bar-menu>a");
     const body = document.getElementById("css-body");
     const loader = document.getElementById("loader")
-    const param = (window.location.href).split("/")
+    const current_url = window.location.href
+    const param = (current_url).split("/")
     const recipe_genre = param[param.length-1]
     const recipe_name = param[param.length-2]
     const reveal_button =document.getElementById("options")
@@ -122,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch('/recipes/data')
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+
                 const titles = Object.keys(data);
                 if (recipe_name === "recipes") {
                     create_buttons(["Add", "Remove"])
@@ -252,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     const edit_button = document.getElementById("button_1")
                                     if (edit_button){
                                         edit_button.addEventListener("click", function (){
-                                            recipesContainer.style.display = "none"
+                                            recipesContainer.classList.add("hidden")
                                             formContainer.classList.remove("hidden")
                                             form_title.innerText = "Edit Recipe"
                                             form_name.value = recipe.name
@@ -325,5 +326,21 @@ document.addEventListener("DOMContentLoaded", function () {
         recipesContainer.classList.remove("hidden")
         formContainer.classList.add("hidden")
     })
+
+    const formEl = document.querySelector(".form");
+    formEl.addEventListener("submit", event => {
+        event.preventDefault();
+        const formData = new FormData(formEl);
+        formData.append("form_ingredients", ingredients);
+        for (let [key, value] of formData.entries()) {
+            console.log(`${key}:`, value);
+        }
+        fetch(current_url, {
+            method: 'POST',
+            body: formData
+        }).then(res => res.json())
+            .then(data => console.log('Response:', data))
+            .catch(error => console.error('Error:', error));
+    });
 
 })
