@@ -296,6 +296,20 @@ document.addEventListener("DOMContentLoaded", function () {
                                                     form_img.files = dataTransfer.files;})
                                                 formContainer.classList.replace('opacity-0', 'opacity-100');
                                         })
+                                        if (edit_button){
+                                            formEl.addEventListener("submit", event => {
+                                                event.preventDefault();
+                                                const formData = new FormData(formEl);
+                                                formData.set("form_ingredients", ingredients)
+
+                                                fetch(`${current_url}`, {
+                                                    method: 'PATCH',
+                                                    body: formData
+                                                }).then(res => res.json())
+                                                    .then(data => console.log(data))
+                                                window.location.reload()
+                                            });
+                                        }
                                     }
                                 }
                             })
