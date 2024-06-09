@@ -182,17 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 const remover = document.createElement("button");
                                 remover.innerText = "x";
                                 remover.classList.add("remover", "hidden", "pointer-events-auto", "border", "rounded-full", "bg-gray-300", "px-2.5", "absolute", "pb-0.5", "ml-48", "z-50", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-125");
-                                remover.addEventListener('click', () => {
-                                    /**
-                                     Because this is kind of confusing ill elaborate here
-                                     The remove button on the corner of the recipe card is on the same hierarchy as the div
-                                     You go into that sibling and to the first child which is the div, then you go to the firstChild which is the
-                                     image, but I need the name of the recipe, so I go to the nextSibling which is the h3 that contains the name
-                                     */
-                                    hide_removers()
-                                    modalDialog.classList.remove("hidden")
-                                    console.log((remover.nextSibling.firstChild.firstChild.nextSibling).textContent)
-                                });
+
                                 nodeRemover.appendChild(remover)
                                 node.appendChild(nodeImage);
                                 node.appendChild(nodeName);
@@ -245,6 +235,29 @@ document.addEventListener("DOMContentLoaded", function () {
                                             window.location.reload()
                                         });
                                     }
+                                    remover.addEventListener('click', () => {
+                                        /**
+                                         Because this is kind of confusing I'll elaborate here
+                                         The remove button on the corner of the recipe card is on the same hierarchy as the div
+                                         You go into that sibling and to the first child which is the div, then you go to the firstChild which is the
+                                         image, but I need the name of the recipe, so I go to the nextSibling which is the h3 that contains the name
+                                         */
+                                        hide_removers()
+                                        modalDialog.classList.remove("hidden")
+                                        const closeModal = document.getElementById("modal_confirm")
+                                        closeModal.addEventListener("click", function (event){
+                                            event.preventDefault()
+                                            const recipeNameDelete = (remover.nextSibling.firstChild.firstChild.nextSibling).textContent
+                                            fetch(`${currentUrl}/${encodeURIComponent(recipeNameDelete)}`, {
+                                                method: 'DELETE',
+                                                body: recipeNameDelete
+                                            }).then(res => res.json())
+                                                .then(data => console.log(data))
+                                            window.location.reload()
+                                        })
+
+                                    });
+
                                 }
                             })
                         }
@@ -328,7 +341,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                              Fetches the image and places it in the file drop if user wants to keep the file and not change it
                                              Of-course if the user wants to change the image, he can.
                                              */
-                                            fetch(`/images/${recipeGenre}/${recipeName}.jpg`)
+                                            fetch(nodeImage.src)
                                                 .then(response => {
                                                     if (!response.ok) {
                                                         throw new Error('Network response was not ok');
@@ -346,7 +359,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                             formContainer.classList.replace('opacity-0', 'opacity-100');
                                         })
-
                                         if (edit_button){
                                             send_patch_request()
                                         }

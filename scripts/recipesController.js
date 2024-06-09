@@ -54,9 +54,13 @@ router.get("/:type/:recipe", (request, response) => {
     response.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-router.delete("/:type", (request, response) =>{
+router.delete("/:type/:recipe", (request, response) =>{
     const type = request.params.type
     let recipe_genre = getGenreType(type)
+    const recipe = request.params.recipe
+    const index = recipe_genre.findIndex(b => b.name === recipe)
+    recipe_genre.splice(index, 1)
+    response.json(recipes)
 
 })
 const fileFilter = (req, file, cb) => {
@@ -101,7 +105,6 @@ router.patch("/:type/:recipe", uploadPatch.single("form_image"), (request, respo
     data.name = name
     data.ingredients = ingredients
     data.instructions = instructions
-    console.log(data)
     response.sendStatus(200)
 })
 module.exports = router;
