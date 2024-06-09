@@ -136,6 +136,21 @@ document.addEventListener("DOMContentLoaded", function () {
         removers.forEach( remover => remover.classList.add("hidden"))
     }
 
+    function send_patch_request(){
+        formElement.addEventListener("submit", event => {
+            event.preventDefault();
+            const formData = new FormData(formElement);
+            formData.set("form_ingredients", ingredients)
+
+            fetch(`${currentUrl}`, {
+                method: 'PATCH',
+                body: formData
+            }).then(res => res.json())
+                .then(data => console.log(data))
+            window.location.reload()
+        });
+    }
+
     /**
      FETCH
      This is for the display of the recipes in the overview of all recipes inside a genre and if the URL has
@@ -313,14 +328,23 @@ document.addEventListener("DOMContentLoaded", function () {
                                              Fetches the image and places it in the file drop if user wants to keep the file and not change it
                                              Of-course if the user wants to change the image, he can.
                                              */
-                                            fetch(nodeImage.src)
-                                                .then(response => response.blob())
+                                            fetch(`/images/${recipeGenre}/${recipeName}.jpg`)
+                                                .then(response => {
+                                                    if (!response.ok) {
+                                                        throw new Error('Network response was not ok');
+                                                    }
+                                                    return response.blob();
+                                                })
                                                 .then(blob => {
+                                                    console.log('Blob size:', blob.size);
                                                     const file = new File([blob], `${recipe.name}.jpg`, { type: 'image/jpeg' });
                                                     const dataTransfer = new DataTransfer();
                                                     dataTransfer.items.add(file);
-                                                    formImage.files = dataTransfer.files;})
-                                                formContainer.classList.replace('opacity-0', 'opacity-100');
+                                                    formImage.files = dataTransfer.files;
+                                                })
+                                                .catch(error => console.error('Error fetching or processing image:', error));
+
+                                            formContainer.classList.replace('opacity-0', 'opacity-100');
                                         })
 
                                         if (edit_button){

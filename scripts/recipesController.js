@@ -4,7 +4,7 @@ const path = require('path');
 const router = express.Router();
 const recipes = require("./recipes.json");
 const {response} = require("express");
-
+const fs = require("fs")
 function getGenreType(type){
     let result
     Object.keys(recipes).forEach(genre =>{
@@ -16,14 +16,27 @@ function getGenreType(type){
         return result
     }
 }
+
 const storage = multer.diskStorage({
     destination: (request, file, cb) => {
         const genre = request.params.type;
         const upload_path = path.join(__dirname, 'images', genre);
         cb(null, upload_path);
     },
-    filename: (request, file, cb) => {
-        cb(null, Object.entries(request.body)[0][1] + ".jpg");
+    filename: function (request, file, cb) {
+        const genre = request.params.type;
+        const filename = Object.entries(request.body)[0][1] + ".jpg";
+        const filepath = path.join(__dirname, `/images/${genre}`,  filename);
+        fs.access(filepath, fs.constants.F_OK, (err) => {
+            if (err) {
+                console.log('File does not exist, will be uploaded:', filename);
+                cb(null, filename);
+            } else {
+                console.log('File already exists:', filename);
+                fs.unlinkSync(filepath)
+                cb(null, filename);
+            }
+        });
     }
 });
 router.get('/home', (request, response) => {
@@ -48,8 +61,18 @@ router.delete("/:type", (request, response) =>{
     let recipe_genre = getGenreType(type)
 
 })
+const fileFilter = (req, file, cb) => {
+    if (!file){
+        return cb(new Error('No file uploaded'), false)
+    }
+    if (!file.originalname.match(/\.(jpg)$/)) {
+        return cb(new Error('Only JPG files are allowed!'), false);
+    }
+    cb(null, true);
+};
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage: storage, fileFilter: fileFilter });
+
 router.post("/:type", upload.single("form_image"), (request, response) =>{
     const type = request.params.type
     const form_data = Object.entries(request.body)
@@ -64,8 +87,24 @@ router.post("/:type", upload.single("form_image"), (request, response) =>{
 
 })
 
-router.patch("/:type/:recipe", upload.single("form_image"), (request, response) => {
 
+
+const uploadPatch = multer({ storage: storage, fileFilter: fileFilter})
+router.patch("/:type/:recipe", uploadPatch.single("form_image"), (request, response) => {
+    const type = request.params.type
+    const recipe = request.params.recipe
+    let recipe_genre = getGenreType(type)
+    const form_data = Object.entries(request.body)
+    const name = (form_data[0])[1]
+    const ingredients = form_data[1][1].split(",")
+    const instructions = (form_data[2])[1]
+    const result = recipe_genre.findIndex(b => b.name === recipe)
+    const data = recipe_genre[result]
+    data.name = name
+    data.ingredients = ingredients
+    data.instructions = instructions
+    console.log(data)
+    response.sendStatus(200)
 })
 module.exports = router;
 
