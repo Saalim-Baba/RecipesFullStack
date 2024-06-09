@@ -3,7 +3,6 @@ const multer = require('multer');
 const path = require('path');
 const router = express.Router();
 const recipes = require("./recipes.json");
-const {response} = require("express");
 const fs = require("fs")
 function getGenreType(type){
     let result

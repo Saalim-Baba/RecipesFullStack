@@ -52,7 +52,7 @@
         <form action="#" method="post" enctype="multipart/form-data" class='form'>
           <div class="mb-4">
             <label for="form_name" class="block text-gray-700 font-serif mb-2">Recipe Name</label>
-            <input type="text" id="form_name" name="form_name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" autocomplete="off" placeholder="Enter recipe name">
+            <input type="text" id="form_name" name="form_name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" autocomplete="off" placeholder="Enter recipe name" required>
           </div>
           <div class="mb-4">
             <label for="form_ingredients" class="block text-gray-700 font-serif mb-2">Ingredients</label>
@@ -61,11 +61,11 @@
           </div>
           <div class="mb-4">
             <label for="form_instructions" class="block text-gray-700 font-serif mb-2">Instructions</label>
-            <textarea id="form_instructions" name="form_instructions" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Describe the preparation steps"></textarea>
+            <textarea id="form_instructions" name="form_instructions" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Describe the preparation steps" required></textarea>
           </div>
           <div class="mb-4">
             <label for="form_image" class="block text-gray-700 font-serif mb-2">Image of the Food</label>
-            <input type="file" accept='image/jpeg' id="form_image" name="form_image" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
+            <input type="file" accept='image/jpeg' id="form_image" name="form_image" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" required>
           </div>
           <div class="text-center">
             <button type="button" id='form_cancel' class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-700 focus:outline-none">Cancel</button>
