@@ -26,15 +26,14 @@ const storage = multer.diskStorage({
     filename: function (request, file, cb) {
         const genre = request.params.type;
         const filename = Object.entries(request.body)[0][1] + ".jpg";
-        const filepath = path.join(__dirname, `/images/${genre}`,  filename);
+        const fileForcedName = file.originalname
+        const filepath = path.join(__dirname, `/images/${genre}`,  fileForcedName);
         fs.access(filepath, fs.constants.F_OK, (err) => {
             if (err) {
                 console.log('File does not exist, will be uploaded:', filename);
                 cb(null, filename);
             } else {
-                console.log('File already exists:', filename);
-                fs.unlinkSync(filepath)
-                cb(null, filename);
+                console.log("File didn't change")
             }
         });
     }
