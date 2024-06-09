@@ -3,8 +3,19 @@ const multer = require('multer');
 const path = require('path');
 const router = express.Router();
 const recipes = require("./recipes.json");
+const {response} = require("express");
 
-
+function getGenreType(type){
+    let result
+    Object.keys(recipes).forEach(genre =>{
+        if(genre.toLowerCase() === type.toLowerCase()){
+            result = recipes[genre]
+        }
+    })
+    if (result){
+        return result
+    }
+}
 const storage = multer.diskStorage({
     destination: (request, file, cb) => {
         const genre = request.params.type;
@@ -34,13 +45,7 @@ router.get("/:type/:recipe", (request, response) => {
 
 router.delete("/:type", (request, response) =>{
     const type = request.params.type
-    let recipe_genre;
-    Object.keys(recipes).forEach(genre =>{
-        if(genre.toLowerCase() === type.toLowerCase()){
-            recipe_genre = recipes[genre]
-        }
-    }
-    )
+    let recipe_genre = getGenreType(type)
 
 })
 
@@ -48,17 +53,19 @@ const upload = multer({ storage: storage });
 router.post("/:type", upload.single("form_image"), (request, response) =>{
     const type = request.params.type
     const form_data = Object.entries(request.body)
-    let recipe_genre
-    Object.keys(recipes).forEach(genre =>{
-        if(genre.toLowerCase() === type.toLowerCase()){
-            recipe_genre = recipes[genre]
-        }
-    })
+    let recipe_genre = getGenreType(type)
     const name = (form_data[0])[1]
     const ingredients = form_data[1][1].split(",")
     const instructions = (form_data[2])[1]
-    recipe_genre.push({"name" : name, "ingredients": ingredients, "instructions": instructions})
-    response.sendStatus(200)
+    if (recipe_genre){
+        recipe_genre.push({"name" : name, "ingredients": ingredients, "instructions": instructions})
+        response.sendStatus(200)
+    }
+
+})
+
+router.patch("/:type/:recipe", upload.single("form_image"), (request, response) => {
+
 })
 module.exports = router;
 
