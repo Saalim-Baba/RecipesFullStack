@@ -296,6 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                                     form_img.files = dataTransfer.files;})
                                                 formContainer.classList.replace('opacity-0', 'opacity-100');
                                         })
+
                                         if (edit_button){
                                             formEl.addEventListener("submit", event => {
                                                 event.preventDefault();
