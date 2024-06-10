@@ -33,6 +33,7 @@ const storage = multer.diskStorage({
                 cb(null, filename);
             } else {
                 console.log("File didn't change")
+                cb(null, "works fine")
             }
         });
     }
@@ -100,8 +101,11 @@ router.patch("/:type/:recipe", uploadPatch.single("form_image"), (request, respo
     const name = (form_data[0])[1]
     const ingredients = form_data[1][1].split(",")
     const instructions = (form_data[2])[1]
-    const result = recipe_genre.findIndex(b => b.name === recipe)
+    const formattedName = (recipe).replace(/_/g, ' ');
+    const result = recipe_genre.findIndex(b => b.name === formattedName)
     const data = recipe_genre[result]
+    console.log(formattedName)
+    console.log(recipe_genre, result)
     data.name = name
     data.ingredients = ingredients
     data.instructions = instructions
