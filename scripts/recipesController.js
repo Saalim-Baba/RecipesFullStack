@@ -104,8 +104,6 @@ router.patch("/:type/:recipe", uploadPatch.single("form_image"), (request, respo
     const formattedName = (recipe).replace(/_/g, ' ');
     const result = recipe_genre.findIndex(b => b.name === formattedName)
     const data = recipe_genre[result]
-    console.log(formattedName)
-    console.log(recipe_genre, result)
     data.name = name
     data.ingredients = ingredients
     data.instructions = instructions
