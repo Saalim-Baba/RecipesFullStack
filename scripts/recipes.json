@@ -49,7 +49,7 @@
       "instructions": "Cook lasagna noodles according to package instructions. In a skillet, brown ground beef and Italian sausage with garlic and onion. Mix in tomato sauce. In a bowl, combine ricotta cheese, egg, and grated Parmesan cheese. Layer lasagna noodles, meat sauce, ricotta mixture, and mozzarella cheese in a baking dish. Repeat layers and top with mozzarella and Parmesan cheese. Bake in a preheated oven until bubbly and golden."
     },
     {
-      "name": "Gelato",
+        "name": "Gelato",
       "ingredients": ["whole milk", "heavy cream", "sugar", "egg yolks", "flavorings (vanilla, chocolate, fruit puree, etc.)"],
       "instructions": "In a saucepan, heat whole milk and heavy cream until almost boiling. In a bowl, whisk egg yolks and sugar until pale and creamy. Slowly pour the hot milk mixture into the egg yolks, whisking constantly. Return the mixture to the saucepan and cook over low heat until slightly thickened. Remove from heat and stir in desired flavorings. Chill in the refrigerator for several hours or overnight. Churn in an ice cream maker according to manufacturer's instructions."
     }
@@ -316,7 +316,7 @@
   ],
   "Swiss": [
     {
-      "name": "Rösti",
+      "name": "Roesti",
       "ingredients": ["potatoes", "butter", "salt", "black pepper", "onion", "bacon", "Emmental cheese", "sour cream"],
       "instructions": "Grate potatoes and squeeze out excess moisture. Season with salt and pepper. Heat butter in a pan and spread the grated potatoes evenly. Cook until golden brown and crispy on the bottom. Flip and cook the other side. Add sliced onion, bacon, and grated Emmental cheese on top. Cover and cook until cheese is melted. Serve hot with sour cream."
     },
@@ -326,8 +326,8 @@
       "instructions": "Grate Gruyère and Emmental cheese. Rub the inside of a fondue pot with garlic. Heat white wine in the fondue pot and gradually add the grated cheese, stirring until melted. Dissolve cornstarch in Kirsch and add to the cheese mixture. Season with nutmeg. Serve with cubed baguette, pearl onions, and gherkins for dipping."
     },
     {
-      "name": "Zürcher Geschnetzeltes",
-      "ingredients": ["veal slices", "mushrooms", "cream", "white wine", "onion", "butter", "flour", "vegetable broth", "lemon juice", "parsley", "Rösti"],
+      "name": "Zuercher Geschnetzeltes",
+      "ingredients": ["veal slices", "mushrooms", "cream", "white grape juice", "onion", "butter", "flour", "vegetable broth", "lemon juice", "parsley", "Rösti"],
       "instructions": "Slice veal thinly. Sauté veal and sliced mushrooms in butter until browned. Remove from the pan and set aside. Sauté finely chopped onion in the same pan until translucent. Stir in flour and cook until golden. Deglaze with white wine and vegetable broth. Add cream and simmer until thickened. Return veal and mushrooms to the pan. Season with lemon juice and chopped parsley. Serve hot with Rösti."
     },
     {
@@ -341,7 +341,7 @@
       "instructions": "Slice Raclette cheese thinly. Boil potatoes until tender. Arrange the cheese, potatoes, pickles, pearl onions, gherkins, and charcuterie on a platter. Place the Raclette cheese slices on individual trays and melt under a Raclette grill. Serve melted cheese over potatoes and accompany with pickles, pearl onions, gherkins, charcuterie, and slices of baguette."
     },
     {
-      "name": "Bündner Nusstorte",
+      "name": "Buendner Nusstorte",
       "ingredients": ["flour", "sugar", "butter", "eggs", "honey", "cream", "walnuts", "raisins", "cinnamon"],
       "instructions": "Mix flour, sugar, butter, eggs, and honey to form a dough. Press into a tart pan. Spread a layer of cream over the dough. Mix chopped walnuts, raisins, and cinnamon and spread over the cream layer. Bake until golden brown. Allow to cool before slicing."
     },
@@ -351,7 +351,7 @@
       "instructions": "Melt dark chocolate with cream in a fondue pot over low heat. Stir in Kirsch. Spear marshmallows, strawberries, banana slices, pineapple chunks, and pretzels with fondue forks and dip into the melted chocolate."
     },
     {
-      "name": "Älplermagronen",
+      "name": "Aelplermagronen",
       "ingredients": ["macaroni pasta", "potatoes", "bacon", "onion", "Emmental cheese", "cream", "butter", "apple sauce"],
       "instructions": "Cook macaroni pasta and potatoes until tender. Sauté bacon and onion until golden. Drain the pasta and potatoes and mix with the bacon and onion mixture. Stir in grated Emmental cheese and cream. Serve hot with a dollop of apple sauce."
     },
