@@ -221,20 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                             remover.classList.remove("hidden")
                                         })
                                     })
-                                    if (addButton){
-                                        formElement.addEventListener("submit", event => {
-                                            event.preventDefault();
-                                            const formData = new FormData(formElement);
-                                            formData.set("form_ingredients", ingredients)
-
-                                            fetch(`${currentUrl}`, {
-                                                method: 'POST',
-                                                body: formData
-                                            }).then(res => res.json())
-                                                .then(data => console.log(data))
-                                            window.location.reload()
-                                        });
-                                    }
                                     remover.addEventListener('click', () => {
                                         /**
                                          Because this is kind of confusing I'll elaborate here
@@ -410,7 +396,18 @@ document.addEventListener("DOMContentLoaded", function () {
         recipesContainer.classList.remove("hidden")
         formContainer.classList.add("hidden")
     })
+    formElement.addEventListener("submit", event => {
+        event.preventDefault();
+        const formData = new FormData(formElement);
+        formData.set("form_ingredients", ingredients)
 
+        fetch(`${currentUrl}`, {
+            method: 'POST',
+            body: formData
+        }).then(res => res.json())
+            .then(data => console.log(data))
+        window.location.reload()
+    });
 
 
 
