@@ -4,7 +4,8 @@ const port = 3000
 const securityController = require('./securityController.js')
 const recipesController = require('./recipesController.js')
 const session = require('express-session')
-const swaggerUi= require('swagger-ui-express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../documentation/swagger-output.json');
 const path = require("path");
 
 app.use(session({
@@ -20,6 +21,7 @@ app.use('/recipes', recipesController)
 app.use('', securityController)
 app.use('/images', express.static(path.join(__dirname,'images')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`)
