@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const securityController = require('./securityController.js')
 const recipesController = require('./recipesController.js')
 const session = require('express-session')
 const swaggerUi = require('swagger-ui-express');
@@ -18,7 +17,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 app.use(express.static("./public"));
 app.use('/recipes', recipesController)
-app.use('', securityController)
 app.use('/images', express.static(path.join(__dirname,'images')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

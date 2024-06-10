@@ -35,7 +35,7 @@ THIS IS NOT COMMERCIAL USAGE: This is just for my portfolio and showcase my skil
    npm run app.js
    ```
 2. **Access the application**:
-   Open your browser and go to `http://localhost:3000`.
+   Open your browser and go to `http://localhost:3000/recipes/home`.
 
 ### Project Structure
 
