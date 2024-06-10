@@ -48,12 +48,28 @@ router.get("/:type/:recipe", (request, response) => {
 });
 
 router.delete("/:type/:recipe", (request, response) =>{
-    const type = request.params.type
-    let recipe_genre = getGenreType(type)
-    const recipe = request.params.recipe
-    const index = recipe_genre.findIndex(b => b.name === recipe)
-    recipe_genre.splice(index, 1)
-    response.json(recipes)
+    const type = request.params.type;
+    if (!type) {
+        return response.status(400).send("Recipe type is required.");
+    }
+
+    let recipe_genre = getGenreType(type);
+    if (!recipe_genre) {
+        return response.status(404).send(`No recipes found for type '${type}'.`);
+    }
+
+    const recipeName = request.params.recipe;
+    if (!recipeName) {
+        return response.status(400).send("Recipe name is required.");
+    }
+
+    const index = recipe_genre.findIndex(b => b.name === recipeName);
+    if (index === -1) {
+        return response.status(404).send(`Recipe '${recipeName}' not found in '${type}'.`);
+    }
+
+    recipe_genre.splice(index, 1);
+    response.status(200).send("Deletion complete")
 
 })
 const fileFilter = (req, file, cb) => {
@@ -69,15 +85,36 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({ storage: storage, fileFilter: fileFilter });
 
 router.post("/:type", upload.single("form_image"), (request, response) =>{
-    const type = request.params.type
-    const form_data = Object.entries(request.body)
-    let recipe_genre = getGenreType(type)
-    const name = (form_data[0])[1]
-    const ingredients = form_data[1][1].split(",")
-    const instructions = (form_data[2])[1]
-    if (recipe_genre){
-        recipe_genre.push({"name" : name, "ingredients": ingredients, "instructions": instructions})
-        response.sendStatus(200)
+    try {
+        const type = request.params.type;
+        if (!type) {
+            return response.status(400).send("Recipe type is required in the URL parameters.");
+        }
+        const form_data = Object.entries(request.body);
+        if (form_data.length < 3) {
+            return response.status(400).send("Incomplete recipe data. Ensure name, ingredients, and instructions are provided.");
+        }
+        let recipe_genre = getGenreType(type);
+        if (!recipe_genre) {
+            return response.status(404).send(`Recipe type '${type}' is not supported.`);
+        }
+        const name = form_data[0][1];
+        if (!name) {
+            return response.status(400).send("Recipe name is required.");
+        }
+        const ingredients = form_data[1][1].split(",");
+        if (ingredients.length === 0 || ingredients[0] === "") {
+            return response.status(400).send("At least one ingredient is required.");
+        }
+        const instructions = form_data[2][1];
+        if (!instructions) {
+            return response.status(400).send("Instructions are required.");
+        }
+        recipe_genre.push({ "name": name, "ingredients": ingredients, "instructions": instructions });
+        response.sendStatus(200);
+    } catch (error) {
+        console.error(error);
+        response.status(500).send("An error occurred while processing your request.");
     }
 
 })
@@ -105,6 +142,7 @@ router.patch("/:type/:recipe", uploadPatch.single("form_image"), (request, respo
         fs.unlink(path.join(__dirname,`/images/${type}/${formattedName}.jpg`), (err) => {
             if (err) {
                 console.error('Error deleting old image:', err);
+                response.status(400).send(err);
             } else {
                 console.log('Old image deleted successfully.');
             }
@@ -120,6 +158,7 @@ router.patch("/:type/:recipe", uploadPatch.single("form_image"), (request, respo
             fs.unlink(oldImagePath, (err) => {
                 if (err) {
                     console.error('Error deleting old image:', err);
+                    response.status(400).send(err);
                 } else {
                     console.log('Old image deleted successfully.');
                 }
@@ -127,7 +166,10 @@ router.patch("/:type/:recipe", uploadPatch.single("form_image"), (request, respo
         }
         recipe.image = request.file.filename;
     }
-    response.send("Recipe updated successfully");
+    else{
+        response.status(404).send("Not found");
+    }
+    response.status(200).send("Recipe updated successfully");
 });
 
 module.exports = router;
