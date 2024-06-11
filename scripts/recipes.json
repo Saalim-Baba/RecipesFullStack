@@ -369,7 +369,7 @@
   "French": [
     {
       "name": "Coq au Vin",
-      "ingredients": ["chicken thighs", "red wine", "bacon", "onion", "carrot", "garlic", "mushrooms", "thyme", "bay leaf", "flour", "butter", "salt", "black pepper", "parsley"],
+      "ingredients": ["chicken thighs", "red w", "bacon", "onion", "carrot", "garlic", "mushrooms", "thyme", "bay leaf", "flour", "butter", "salt", "black pepper", "parsley"],
       "instructions": "Marinate chicken thighs in red wine overnight. In a Dutch oven, cook bacon until crispy. Remove bacon and brown chicken in bacon fat. Sauté chopped onion, carrot, and garlic until softened. Add chicken back to the pot along with mushrooms, thyme, and bay leaf. Sprinkle with flour and cook until flour is browned. Pour in marinade and enough chicken broth to cover. Simmer until chicken is cooked through and sauce is thickened. Season with salt and pepper. Serve hot, garnished with chopped parsley."
     },
     {
@@ -388,7 +388,7 @@
       "instructions": "Spread Dijon mustard on bread slices. Layer with ham and Gruyère cheese. Top with another slice of bread. Melt butter in a skillet and cook sandwiches until golden brown and crispy on both sides. For the sauce, melt butter in a saucepan, whisk in flour, and cook until golden. Gradually whisk in milk until smooth and thickened. Season with nutmeg, salt, and pepper. Pour sauce over sandwiches before serving."
     },
     {
-      "name": "Salade Niçoise",
+      "name": "Salade Nicoise",
       "ingredients": ["tuna", "lettuce", "tomatoes", "cucumber", "red onion", "bell peppers", "hard-boiled eggs", "anchovies", "olives", "olive oil", "red wine vinegar", "Dijon mustard", "garlic", "salt", "black pepper"],
       "instructions": "Arrange torn lettuce leaves on a platter. Top with sliced tomatoes, cucumber, red onion, bell peppers, halved hard-boiled eggs, tuna, anchovies, and olives. Whisk together olive oil, red wine vinegar, Dijon mustard, minced garlic, salt, and pepper to make the dressing. Drizzle dressing over the salad before serving."
     },
@@ -403,7 +403,7 @@
       "instructions": "Sear beef tenderloin until browned on all sides. Sauté chopped mushrooms, shallots, and thyme in butter until softened. Season with salt and pepper. Spread Dijon mustard on beef. Roll out puff pastry and spread mushroom mixture on top. Place beef on top and wrap with puff pastry, sealing the edges. Brush with beaten egg. Bake until pastry is golden brown and beef is cooked to desired doneness."
     },
     {
-      "name": "Crème Brûlée",
+      "name": "Creme Brulee",
       "ingredients": ["heavy cream", "egg yolks", "sugar", "vanilla bean", "hot water"],
       "instructions": "Preheat oven to 300°F (150°C). Heat heavy cream with scraped vanilla bean until simmering. In a bowl, whisk together egg yolks and sugar until pale and thick. Slowly pour hot cream into the egg mixture, whisking constantly. Strain mixture and pour into ramekins. Place ramekins in a baking dish and fill with hot water until halfway up the sides of the ramekins. Bake for 30-40 minutes, or until set. Chill in the refrigerator. Before serving, sprinkle sugar on top and caramelize with a kitchen torch."
     },
