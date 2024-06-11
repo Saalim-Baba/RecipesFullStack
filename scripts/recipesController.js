@@ -76,8 +76,8 @@ const fileFilter = (req, file, cb) => {
     if (!file){
         return cb(new Error('No file uploaded'), false)
     }
-    if (!file.originalname.match(/\.(jpg)$/)) {
-        return cb(new Error('Only JPG files are allowed!'), false);
+    if (!file.originalname.match(/\.(webp)$/)) {
+        return cb(new Error('Only WEBP files are allowed!'), false);
     }
     cb(null, true);
 };

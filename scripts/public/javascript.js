@@ -136,20 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
         removers.forEach( remover => remover.classList.add("hidden"))
     }
 
-    function send_patch_request(){
-        formElement.addEventListener("submit", event => {
-            event.preventDefault();
-            const formData = new FormData(formElement);
-            formData.set("form_ingredients", ingredients)
-
-            fetch(`${currentUrl}`, {
-                method: 'PATCH',
-                body: formData
-            }).then(res => res.json())
-                .then(data => console.log(data))
-            window.location.reload()
-        });
-    }
 
     /**
      FETCH
@@ -175,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 const link = document.createElement("a");
                                 node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110", "recipe_container");
                                 recipesContainer.classList.add("flex", "flex-row", "flex-wrap", "font-serif", "justify-start", "py-11", "md:p-0", "[&>div>a>div>h3]:p-5", "[&>div>a>div]:w-[220px]", "gap-y-5", "gap-x-5", "[&>div>a>div:not(:last-child)]:lg:space-x-4", "mt-11", "ml-14");
-                                nodeImage.src = `../images/${recipeGenre}/${recipe.name}.jpg`;
+                                nodeImage.src = `../images/${recipeGenre}/${recipe.name}.webp`;
                                 nodeImage.classList.add("object-contain", "h-auto", "w-auto", "draggable", "false", "w-[216px]", "h-[216px]");
                                 nodeName.innerText = recipe.name;
                                 const formattedName = (recipe.name).replace(/\s+/g, '_');
@@ -276,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                         "gap-y-5", "[&>div:not(:last-child)]:lg:space-x-4", "mt-11",
                                          "w-full"
                                     );
-                                    nodeImage.src = `/images/${recipeGenre}/${recipe.name}.jpg`;
+                                    nodeImage.src = `/images/${recipeGenre}/${recipe.name}.webp`;
                                     nodeImage.classList.add("mt-10", "border-4")
                                     nodeName.innerText = recipe.name
                                     document.title = recipe.name
@@ -336,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                                 })
                                                 .then(blob => {
                                                     console.log('Blob size:', blob.size);
-                                                    const file = new File([blob], `${recipe.name}.jpg`, { type: 'image/jpeg' });
+                                                    const file = new File([blob], `${recipe.name}.webp`, { type: 'image/webp' });
                                                     const dataTransfer = new DataTransfer();
                                                     dataTransfer.items.add(file);
                                                     formImage.files = dataTransfer.files;
@@ -346,8 +332,17 @@ document.addEventListener("DOMContentLoaded", function () {
                                             formContainer.classList.replace('opacity-0', 'opacity-100');
                                         })
                                         if (edit_button){
-                                            send_patch_request()
-                                        }
+                                            formElement.addEventListener("submit", event => {
+                                                event.preventDefault();
+                                                const formData = new FormData(formElement);
+                                                formData.set("form_ingredients", ingredients)
+                                                fetch(`${currentUrl}`, {
+                                                    method: 'PATCH',
+                                                    body: formData
+                                                }).then(res => res.json())
+                                                    .then(data => console.log(data))
+                                                window.location.reload()
+                                            }) }
                                     }
                                 }
                             })
