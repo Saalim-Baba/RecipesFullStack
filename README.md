@@ -3,13 +3,14 @@
 ### Overview
 RecipesFullStack is a full-stack web application for managing recipes. It includes a front-end using HTML, CSS, JavaScript, and Tailwind CSS, and a back-end likely involving Node.js and Express.js.
 
-### Important Note!!!
-BE CAREFUL WITH IMAGES: I encountered some issues with the images, some of them corrupted partly and some completely, USE ON OWN RISK. I'm NOT responsible for any damage done to the images.
-USE AT OWN RISK
+### Important Notes!!!
+**BE CAREFUL WITH IMAGES**: I encountered some issues with the images, some of them corrupted partly and some completely, USE ON OWN RISK. I'm NOT responsible for any damage done to the images.
+**USE AT OWN RISK**
 
-SOME IMAGES ARE AI GENERATED: I generally used Unsplashed for the Images, but sometimes if no image was found, I resorted of AI generated Images.
+**SOME IMAGES ARE AI GENERATED**: I generally used Unsplashed for the Images, but sometimes if no image was found, I resorted of AI generated Images.
+This also means the recipe themselves do **NOT** identically look like the images.
 
-THIS IS NOT COMMERCIAL USAGE: This is just for my portfolio and showcase my skill. You can further build it with logging system, but change the images.
+**THIS IS NOT COMMERCIAL USAGE**: This is just for my portfolio and showcase my skill. You can further build it with logging system, but change the images.
 
 ### Features
 - **Recipe Management**: Create, edit, delete recipes.
