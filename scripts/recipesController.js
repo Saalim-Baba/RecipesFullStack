@@ -24,10 +24,7 @@ const storage = multer.diskStorage({
     },
     filename: function (request, file, cb) {
         const foodName = (Object.entries(request.body)[0])[1]
-        const fileExt = path.extname(file.originalname);
-        cb(null, `${foodName}${fileExt}`);
-
-
+        cb(null, `${foodName}.webp`);
     }
 });
 router.get('/home', (request, response) => {
@@ -75,9 +72,6 @@ router.delete("/:type/:recipe", (request, response) =>{
 const fileFilter = (req, file, cb) => {
     if (!file){
         return cb(new Error('No file uploaded'), false)
-    }
-    if (!file.originalname.match(/\.(webp)$/)) {
-        return cb(new Error('Only WEBP files are allowed!'), false);
     }
     cb(null, true);
 };
