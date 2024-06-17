@@ -169,6 +169,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 remover.innerText = "x";
                                 remover.classList.add("remover", "hidden", "pointer-events-auto", "border", "rounded-full", "bg-gray-300", "px-2.5", "absolute", "pb-0.5", "ml-48", "z-50", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-125");
                                 recipesContainer.classList.add("opacity-0")
+                                setTimeout(() => {
+                                    recipesContainer.classList.add("transition", "duration-500", "opacity-100");
+                                    recipesContainer.classList.remove("opacity-0");
+                                }, 100);
                                 nodeRemover.appendChild(remover)
                                 node.appendChild(nodeImage);
                                 node.appendChild(nodeName);
@@ -176,10 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                 link.appendChild(node);
                                 nodeRemover.appendChild(link);
                                 recipesContainer.appendChild(nodeRemover);
-                                setTimeout(() => {
-                                    recipesContainer.classList.add("transition", "duration-500", "opacity-100");
-                                    recipesContainer.classList.remove("opacity-0");
-                                }, 100);
                                 const addButton = document.getElementById("button_2")
                                 const deleteButton = document.getElementById("button_3")
                                 const recipesDiv = document.querySelectorAll(".recipe_container")
@@ -287,6 +287,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                     descriptionTitle.classList.add("text-xl", "self-start", "ml-10")
                                     create_buttons(["Edit"])
                                     ingredientContainer.appendChild(node_ingredients)
+                                    recipesContainer.classList.add("opacity-0")
+                                    setTimeout(() => {
+                                        recipesContainer.classList.add("transition", "duration-500", "opacity-100");
+                                        recipesContainer.classList.remove("opacity-0");
+                                    }, 100);
                                     node.appendChild(nodeImage);
                                     node.appendChild(nodeName);
                                     node.appendChild(ingredientTitle)
