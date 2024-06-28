@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 setTimeout(() => {
                                     recipesContainer.classList.add("transition", "duration-500", "opacity-100");
                                     recipesContainer.classList.remove("opacity-0");
-                                }, 100);
+                                }, 500);
                                 nodeRemover.appendChild(remover)
                                 node.appendChild(nodeImage);
                                 node.appendChild(nodeName);
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     ingredientContainer.appendChild(node_ingredients)
                                     recipesContainer.classList.add("opacity-0")
                                     setTimeout(() => {
-                                        recipesContainer.classList.add("transition", "duration-500", "opacity-100");
+                                        recipesContainer.classList.add("transition", "duration-200", "opacity-100");
                                         recipesContainer.classList.remove("opacity-0");
                                     }, 100);
                                     node.appendChild(nodeImage);
