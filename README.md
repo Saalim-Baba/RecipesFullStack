@@ -21,7 +21,7 @@ This also means the recipe themselves do **NOT** identically look like the image
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Username/RecipesFullStack.git
+   git clone https://github.com/Saalim-Baba/RecipesFullStack.git
    ```
 2. **Navigate to the project directory**:
    ```bash
