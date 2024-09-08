@@ -1,21 +1,21 @@
-## RecipesFullStack
+## RecipesFullStack 🍳
 
 ### Overview
 RecipesFullStack is a full-stack web application for managing recipes. It includes a front-end using HTML, CSS, JavaScript, and Tailwind CSS, and a back-end likely involving Node.js and Express.js.
 
-### Important Notes!!!
+### Important Notes!!! 🚨
 **Images**: I encountered some issues with the images, some of them corrupted partly and some completely, USE ON OWN RISK. I'm NOT responsible for any damage done to the images.
-**Usage on own risk**
+**Usage on own risk** 🚫
 
-**AI Generated**: I generally used Unsplashed for the Images, but sometimes if no image was found, I resorted of AI generated Images.
-This also means the recipe themselves do **NOT** identically look like the images.
+**AI Generated**: I generally used Unsplashed for the Images, but sometimes if no image was found, I resorted to AI generated Images.
+This also means the recipe themselves do **NOT** identically look like the images. 🖼️
 
-### Features
+### Features 🌟
 - **Recipe Management**: Create, edit, delete recipes.
 - **Responsive Design**: Mobile-friendly layout.
 - **API Integration**: Handles data through RESTful APIs.
 
-### Installation
+### Installation 🛠️
 
 1. **Clone the repository**:
    ```bash
@@ -30,7 +30,7 @@ This also means the recipe themselves do **NOT** identically look like the image
    npm install
    ```
 
-### Usage
+### Usage 📚
 
 1. **Start the server**:
    ```bash
@@ -39,7 +39,7 @@ This also means the recipe themselves do **NOT** identically look like the image
 2. **Access the application**:
    Open your browser and go to `http://localhost:3000/recipes/home`.
 
-### Project Structure
+### Project Structure 🏗️
 
 - **Frontend**:
   - `HTML`: Structure of web pages.
@@ -51,10 +51,10 @@ This also means the recipe themselves do **NOT** identically look like the image
   - `Express.js`: Routing and middleware.
   - `JSON`: Saving of the recipes
 
-### License
+### License 📝
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-### Contact
-For questions or suggestions, please contact me
+### Contact 📩
+For questions or suggestions, please contact me.
 
 For more information, visit the [repository](https://github.com/milaasHD/RecipesFullStack).
