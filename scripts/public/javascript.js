@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    /**
+    /*
      FUNCTIONS are declared here till fetch
      */
     function showcase_buttons() {
-        /**
+        /*
          Extends the buttons of the revealButtons by changing their width attribute
          */
         const revealDivs = document.querySelectorAll('.reveal-div');
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })}
     function add_ingredient(event) {
-        /**
+        /*
          Adds ingredients visually to the form and adding the recipe into an array to send to the backend
          You can delete the ingredient with the created x button
          */
@@ -105,11 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
             div.id = `button_${i + array.length}`
             if (i === array.length-1){
                 /*
-                Edit button needs a margin to now be under the revealButton
+                Edit button needs a margin to be under the revealButton
                  */
                 div.classList.add('mr-16')
             }
-
             paragraph.classList.add("text-xs",'opacity-0', 'transition-opacity', 'duration-100', 'z-0', "hidden");
             paragraph.innerText = array[i]
 
@@ -122,13 +121,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function delete_ingredients(remover){
+        /*
+        Deletes the parent aka the whole visual ingredient
+        Gets the name of the ingredient that is being deleted, get index of it in the array
+        removes it from the array
+         */
         (remover.parentElement).remove()
         let ingredient = (remover.previousSibling).innerHTML
         let index = ingredients.indexOf(ingredient);
         if (index !== -1) {
             ingredients.splice(index, 1);
         }
-        console.log(ingredients)
     }
 
     function hide_removers(){
@@ -159,10 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 const nodeImage = document.createElement("img");
                                 const nodeName = document.createElement("h3");
                                 const link = document.createElement("a");
-                                node.classList.add("border-2", "gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110", "recipe_container");
+                                node.classList.add("border-2", "h-[286px]","gap-x-10", "flex", "flex-col", "items-center", "transition-transform", "duration-300", "ease-in-out", "transform", "hover:scale-110", "recipe_container");
                                 recipesContainer.classList.add("flex", "flex-row", "flex-wrap", "font-serif", "justify-start", "py-11", "md:p-0", "[&>div>a>div>h3]:p-5", "[&>div>a>div]:w-[220px]", "gap-y-5", "gap-x-5", "[&>div>a>div:not(:last-child)]:lg:space-x-4", "mt-11", "ml-14");
                                 nodeImage.src = `../images/${recipeGenre}/${recipe.name}.webp`;
-                                nodeImage.classList.add("object-contain", "h-auto", "w-auto", "draggable", "false", "w-[216px]", "h-[216px]");
+                                nodeImage.classList.add("object-cover", "object-center", "draggable", "false", "w-[216px]", "h-[216px]", "object-fit");
                                 nodeName.innerText = recipe.name;
                                 const formattedName = (recipe.name).replace(/\s+/g, '_');
                                 const remover = document.createElement("button");
@@ -264,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                         "flex", "flex-row", "flex-wrap", "font-serif", "justify-center",
                                         "py-11", "md:p-0", "[&>div>h3]:p-5", "[&>div]:w-[1050px]",
                                         "gap-y-5", "[&>div:not(:last-child)]:lg:space-x-4", "mt-11",
-                                         "w-full"
+                                         "w-full", "h-[286px]"
                                     );
                                     nodeImage.src = `/images/${recipeGenre}/${recipe.name}.webp`;
                                     nodeImage.classList.add("mt-10", "border-4")
@@ -363,12 +366,16 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      addEventListener are declared from here
      */
+
+
     hamburgerButton.addEventListener("click", showcase_sidebar)
+    ///This reveals the hamburger menu
     if (revealButton){
         revealButton.addEventListener('click', showcase_buttons)
     }
 
     window.addEventListener('load', function() {
+        ///When the website is loaded, the loading gif is removed and the body is being displayed
         loaderElement.style.display = "none"
         bodyElement.style.display = "inline"
         sideBarButtons.forEach(button =>
@@ -376,6 +383,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
     document.addEventListener("click", function (event){
+        /*
+        1. checks if hamburger menu or sidebar is targeted
+            2. if they're not, it checks if pointerElement has certain class
+                3. if true, it'll just trigger the function
+        2. if false it just ignores it, as it should.
+        Purpose is for everything to be closed down, if not clicked on the hamburger menu or the buttons
+        */
         if (!(hamburgerButton.contains(event.target) || sideBar.contains(event.target)||revealButton.contains(event.target))){
             if (pointerElement.classList.contains("-rotate-90")){
                 showcase_buttons()

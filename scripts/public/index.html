@@ -7,19 +7,7 @@
   <title>Recipes</title>
 </head>
 <div id='loader' class="flex justify-center items-center text-center relative ">
-  <div aria-label="Loading..." role="status" class="flex flex-col items-center space-y-4 my-64">
-    <svg class="h-32 w-32 animate-spin stroke-gray-500" viewBox="0 0 256 256">
-      <line x1="128" y1="32" x2="128" y2="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-      <line x1="195.9" y1="60.1" x2="173.3" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-      <line x1="224" y1="128" x2="192" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-      <line x1="195.9" y1="195.9" x2="173.3" y2="173.3" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-      <line x1="128" y1="224" x2="128" y2="192" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-      <line x1="60.1" y1="195.9" x2="82.7" y2="173.3" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-      <line x1="32" y1="128" x2="64" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-      <line x1="60.1" y1="60.1" x2="82.7" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-    </svg>
-    <span class="text-2xl font-serif text-gray-500 mt-32">Loading...</span>
-  </div>
+    <img src='/images/loading.gif' class="w-32 absolute justify-center items-center pt-72" alt="loading gif">
 </div>
 <body class="overflow-x-hidden">
 <div id="css-body" class="hidden">
@@ -28,53 +16,54 @@
       <button id="reveal_side_bar" class="text-2xl font-serif hover:bg-gray-200 px-3 py-2">☰</button>
     </div>
     <div class="flex-1 text-center">
-      <h2 class="text-2xl font-serif pl-25">Overview</h2>
+      <h2 class="text-2xl font-serif pl-25">Recipes</h2>
     </div>
     <div class="flex-2 flex text-center mr-20">
       <a href="https://github.com/Saalim-Baba">
-        <img src="/images/Your_Logo.png" class="h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-125" alt="icon"/>
+        <img src="/images/github.png" class="h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-125" alt="icon"/>
       </a>
     </div>
   </nav>
-  <div id="side-bar-menu" class="z-50 absolute top-[6.5rem] left-0 flex flex-col bg-gray-100 w-52 shadow-lg overflow-hidden items-center justify-evenly transition-all duration-300 ease-in-out">
+  <!-- This is the hamburger menu -->
+  <div id="side-bar-menu" class=" z-50 absolute top-[6.5rem] left-0 flex flex-col bg-gray-100 w-52 shadow-lg overflow-hidden items-center justify-evenly transition-all duration-300 ease-in-out">
     <a href="/recipes/home" class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">Home</a>
-    <a class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">Über mich</a>
+    <a href='https://babas.vercel.app' class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">Über mich</a>
     <a href="https://github.com/Saalim-Baba" class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">GitHub</a>
   </div>
 
-
+</div>
   <div id="recipes">
-  </div>
-  <div id='form' class=' hidden opacity-0 mt-2 transition-opacity ease-in-out transform duration-500'>
-    <div class="container mx-auto p-8">
-      <div class="w-96 mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h2 id='form_title' class=" text-2xl font-serif mb-6 text-center">Recipe</h2>
-        <form action="#" method="post" enctype="multipart/form-data" class='form'>
-          <div class="mb-4">
-            <label for="form_name" class="block text-gray-700 font-serif mb-2">Recipe Name</label>
-            <input type="text" id="form_name" name="form_name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" autocomplete="off" placeholder="Enter recipe name" required>
+      <div id='form' class=' hidden opacity-0 mt-2 transition-opacity ease-in-out transform duration-500'>
+        <div class="container mx-auto p-8">
+          <div class="w-96 mx-auto bg-white p-6 rounded-lg shadow-md">
+            <h2 id='form_title' class=" text-2xl font-serif mb-6 text-center">Recipe</h2>
+            <!-- This is the form, enctype is multipart form data-->
+            <form action="#" method="post" enctype="multipart/form-data" class='form'>
+              <div class="mb-4">
+                <label for="form_name" class="block text-gray-700 font-serif mb-2">Recipe Name</label>
+                <input type="text" id="form_name" name="form_name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" autocomplete="off" placeholder="Enter recipe name" required>
+              </div>
+              <div class="mb-4">
+                <label for="form_ingredients" class="block text-gray-700 font-serif mb-2">Ingredients</label>
+                <input id="form_ingredients" name="form_ingredients" class="w-max px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" autocomplete="off" placeholder="List ingredients">
+                <div id="form_ingredients_list" class="ingredient-list mt-2 space-y-2"></div>
+              </div>
+              <div class="mb-4">
+                <label for="form_instructions" class="block text-gray-700 font-serif mb-2">Instructions</label>
+                <textarea id="form_instructions" name="form_instructions" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Describe the preparation steps" required></textarea>
+              </div>
+              <div class="mb-4">
+                <label for="form_image" class="block text-gray-700 font-serif mb-2">Image of the Food</label>
+                <input type="file" accept='image/*' id="form_image" name="form_image" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" required>
+              </div>
+              <div class="text-center">
+                <button type="button" id='form_cancel' class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-700 focus:outline-none">Cancel</button>
+                <button type="submit" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-700 focus:outline-none">Submit Recipe</button>
+              </div>
+            </form>
           </div>
-          <div class="mb-4">
-            <label for="form_ingredients" class="block text-gray-700 font-serif mb-2">Ingredients</label>
-            <input id="form_ingredients" name="form_ingredients" class="w-max px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" autocomplete="off" placeholder="List ingredients">
-            <div id="form_ingredients_list" class="ingredient-list mt-2 space-y-2"></div>
-          </div>
-          <div class="mb-4">
-            <label for="form_instructions" class="block text-gray-700 font-serif mb-2">Instructions</label>
-            <textarea id="form_instructions" name="form_instructions" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" placeholder="Describe the preparation steps" required></textarea>
-          </div>
-          <div class="mb-4">
-            <label for="form_image" class="block text-gray-700 font-serif mb-2">Image of the Food</label>
-            <input type="file" accept='image/*' id="form_image" name="form_image" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" required>
-          </div>
-          <div class="text-center">
-            <button type="button" id='form_cancel' class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-700 focus:outline-none">Cancel</button>
-            <button type="submit" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-700 focus:outline-none">Submit Recipe</button>
-          </div>
-        </form>
-      </div>
+        </div>
     </div>
-  </div>
   </div>
   <div id='buttons_reveal' class="flex justify-end items-center fixed bottom-16 right-10 z-50">
     <button class='fixed' id="options">
@@ -111,7 +100,7 @@
 
 
 
-  <footer id=footer" class="rounded-lg shadow dark:bg-gray-800 pt-14">
+  <footer id=footer" class="rounded-lg shadow bottom-0 dark:bg-gray-800 absolute">
     <div class=" mx-auto max-w-screen-xl  md:flex md:items-center md:justify-between">
                     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                         © 2024 <a href="https://github.com/Saalim-Baba" class="hover:underline">Saalim-Baba™</a>

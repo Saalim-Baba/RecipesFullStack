@@ -7,19 +7,7 @@
     <title>Overview</title>
 </head>
 <div id='loader' class="flex justify-center items-center text-center relative ">
-    <div aria-label="Loading..." role="status" class="flex flex-col items-center space-y-4 my-64">
-        <svg class="h-32 w-32 animate-spin stroke-gray-500" viewBox="0 0 256 256">
-            <line x1="128" y1="32" x2="128" y2="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-            <line x1="195.9" y1="60.1" x2="173.3" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-            <line x1="224" y1="128" x2="192" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-            <line x1="195.9" y1="195.9" x2="173.3" y2="173.3" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-            <line x1="128" y1="224" x2="128" y2="192" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-            <line x1="60.1" y1="195.9" x2="82.7" y2="173.3" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-            <line x1="32" y1="128" x2="64" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-            <line x1="60.1" y1="60.1" x2="82.7" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
-        </svg>
-        <span class="text-2xl font-serif text-gray-500 mt-32">Loading...</span>
-    </div>
+    <img src='/images/loading.gif' class="w-32 absolute justify-center items-center pt-72">
 </div>
 <body class="overflow-x-hidden">
 <div id="css-body" class="hidden">
@@ -32,13 +20,13 @@
         </div>
         <div class="flex-2 flex text-center mr-10">
             <a href="https://github.com/Saalim-Baba">
-                <img src="/images/Your_Logo.png" class="h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-125" alt="icon"/>
+                <img src="/images/github.png" class="h-10 w-10 transition-transform duration-300 ease-in-out hover:scale-125" alt="icon"/>
             </a>
         </div>
     </nav>
     <div id="side-bar-menu" class="z-50 absolute top-[6.5rem] left-0 flex flex-col bg-gray-100 w-52 shadow-lg overflow-hidden items-center justify-evenly transition-all duration-300 ease-in-out">
         <a href="/recipes/home" class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">Home</a>
-        <a class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">Über mich</a>
+        <a href="https://babas.vercel.app" class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">Über mich</a>
         <a href="https://github.com/Saalim-Baba" class="h-0 w-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200">GitHub</a>
     </div>
 
@@ -100,7 +88,7 @@
         </div>
 
 
-        <footer id=footer" class=" rounded-lg shadow  dark:bg-gray-800 pt-14">
+        <footer id=footer" class=" rounded-lg shadow bottom-0 absolute  dark:bg-gray-800 pt-14">
 
             <div class=" mx-auto max-w-screen-xl  md:flex md:items-center md:justify-between">
                         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
